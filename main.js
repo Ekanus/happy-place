@@ -496,26 +496,25 @@ function initContactPageForm() {
    STACKED SECTIONS SCROLL ANIMATION
    ============================================= */
 function initStackedSections() {
-  // Hero scales down as next section rises
   gsap.to('.hero-center', {
-    scale: 0.85,
-    opacity: 0.5,
+    scale: 0.8,
+    opacity: 0,
     ease: 'none',
     scrollTrigger: {
       trigger: '.narrative',
-      start: 'top bottom',
-      end: 'top top',
+      start: 'top 80%',
+      end: 'top 20%',
       scrub: true,
     }
   });
 
-  // Each section slides up from below
   const sections = document.querySelectorAll(
     '.narrative, .stats, .services, .how-it-works, .difficulties, .testimonials, .footer'
   );
+
   sections.forEach((section) => {
     gsap.fromTo(section,
-      { yPercent: 5 },
+      { yPercent: 15 },
       {
         yPercent: 0,
         ease: 'none',
