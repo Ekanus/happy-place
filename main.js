@@ -152,37 +152,6 @@ function initHero() {
 }
 
 /* =============================================
-   STICKY HERO SCROLL EFFECT
-   ============================================= */
-function initStickyHero() {
-  if (!document.querySelector('.hero') || !document.querySelector('.narrative')) return;
-
-  gsap.to('.hero', {
-    scrollTrigger: {
-      trigger: '.hero',
-      start: 'top top',
-      end: 'bottom top',
-      pin: true,
-      pinSpacing: false,
-      scrub: true,
-    }
-  });
-
-  gsap.fromTo('.narrative',
-    { y: 0 },
-    {
-      y: 0,
-      scrollTrigger: {
-        trigger: '.narrative',
-        start: 'top bottom',
-        end: 'top top',
-        scrub: true,
-      }
-    }
-  );
-}
-
-/* =============================================
    NARRATIVE SECTION ANIMATIONS
    ============================================= */
 function initNarrative() {
@@ -558,7 +527,6 @@ document.addEventListener('DOMContentLoaded', () => {
   initMobileMenu();
   initActiveNav();
   initHero();
-  initStickyHero();
   initNarrative();
   initStats();
   initServices();

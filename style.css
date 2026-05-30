@@ -380,11 +380,6 @@ h1, h2, h3, h4, h5, h6 {
 /* hero stacking handled in HERO section below */
 
 /* Stacked card flow — full section rules */
-main {
-  position: relative;
-  z-index: 2;
-}
-
 .narrative {
   position: relative;
   z-index: 2;
@@ -702,8 +697,8 @@ main {
 .hero {
   height: 100svh;
   background: #90C4AE;
-  position: relative;
-  z-index: 1;
+  position: sticky;
+  z-index: 0;
   border-radius: 0;
   box-shadow: none;
   display: flex;
@@ -711,6 +706,11 @@ main {
   justify-content: center;
   overflow: hidden;
   padding: 5rem 1.5rem 2rem;
+}
+
+main {
+  position: relative;
+  z-index: 1;
 }
 
 /* FLOATING SHAPES CONTAINER */
