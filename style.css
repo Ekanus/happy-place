@@ -23,6 +23,37 @@
   --ease-out:    cubic-bezier(0.22, 1, 0.36, 1);
 }
 
+/* --- GSAP HIDDEN STATE --- */
+.hero-logo-wrap,
+.hero-headline,
+.hero-sub,
+.hero-cta,
+.hero-shape,
+.section-eyebrow,
+.section-headline,
+.section-intro,
+.service-card,
+.step-item,
+.testimonial-card,
+.difficulties__col,
+.pill,
+.page-hero__title,
+.service-detail__image,
+.service-detail__title,
+.service-detail__body,
+.service-detail__list-item,
+.services-cta-banner__title,
+.services-cta-banner__body,
+.contact-page-form__wrap,
+.contact-info-card,
+.faq-item,
+.blog-card,
+.newsletter-section__inner,
+.footer__left,
+.footer__col {
+  opacity: 0;
+}
+
 /* --- RESET --- */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; }

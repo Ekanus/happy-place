@@ -11,19 +11,22 @@ gsap.registerPlugin(ScrollTrigger);
 function reveal(targets, options = {}) {
   const els = document.querySelectorAll(targets);
   if (!els.length) return;
-  gsap.from(targets, {
-    opacity: 0,
-    y: options.y ?? 30,
-    duration: options.duration ?? 0.7,
-    ease: 'power3.out',
-    stagger: options.stagger ?? 0,
-    delay: options.delay ?? 0,
-    scrollTrigger: {
-      trigger: options.trigger ?? targets,
-      start: 'top 92%',
-      toggleActions: 'play none none none',
-    },
-  });
+  gsap.fromTo(targets,
+    { opacity: 0, y: options.y ?? 30 },
+    {
+      opacity: 1,
+      y: 0,
+      duration: options.duration ?? 0.7,
+      ease: 'power3.out',
+      stagger: options.stagger ?? 0,
+      delay: options.delay ?? 0,
+      scrollTrigger: {
+        trigger: options.trigger ?? targets,
+        start: 'top 92%',
+        toggleActions: 'play none none none',
+      },
+    }
+  );
 }
 
 /* =============================================
@@ -154,28 +157,6 @@ function initHero() {
 /* =============================================
    NARRATIVE LINE DRAW ANIMATION
    ============================================= */
-function initNarrativeLine() {
-  const path = document.getElementById('narrative-path');
-  if (!path) return;
-
-  // Use a fixed large length instead of getTotalLength()
-  const length = 2000;
-
-  path.style.strokeDasharray = length;
-  path.style.strokeDashoffset = length;
-
-  gsap.to(path, {
-    strokeDashoffset: 0,
-    ease: 'none',
-    scrollTrigger: {
-      trigger: '.narrative',
-      start: 'top 80%',
-      end: 'bottom 20%',
-      scrub: true,
-    }
-  });
-}
-
 /* =============================================
    NARRATIVE SECTION ANIMATIONS
    ============================================= */
@@ -520,51 +501,15 @@ function initContactPageForm() {
 /* =============================================
    STACKED SECTIONS SCROLL ANIMATION
    ============================================= */
-function initStackedSections() {
-  gsap.to('.hero-center', {
-    scale: 0.8,
-    opacity: 0,
-    ease: 'none',
-    scrollTrigger: {
-      trigger: '.narrative',
-      start: 'top 80%',
-      end: 'top 20%',
-      scrub: true,
-    }
-  });
-
-  const sections = document.querySelectorAll(
-    '.narrative, .stats, .services, .how-it-works, .difficulties, .testimonials, .footer'
-  );
-
-  sections.forEach((section) => {
-    gsap.fromTo(section,
-      { yPercent: 15 },
-      {
-        yPercent: 0,
-        ease: 'none',
-        scrollTrigger: {
-          trigger: section,
-          start: 'top bottom',
-          end: 'top top',
-          scrub: true,
-        }
-      }
-    );
-  });
-}
-
 /* =============================================
    INIT
    ============================================= */
 document.addEventListener('DOMContentLoaded', () => {
-  initStackedSections();
   initAnnouncement();
   initNavScroll();
   initMobileMenu();
   initActiveNav();
   initHero();
-  initNarrativeLine();
   initNarrative();
   initStats();
   initServices();
