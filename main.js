@@ -11,22 +11,19 @@ gsap.registerPlugin(ScrollTrigger);
 function reveal(targets, options = {}) {
   const els = document.querySelectorAll(targets);
   if (!els.length) return;
-  gsap.fromTo(targets,
-    { opacity: 0, y: options.y ?? 30 },
-    {
-      opacity: 1,
-      y: 0,
-      duration: options.duration ?? 0.7,
-      ease: 'power3.out',
-      stagger: options.stagger ?? 0,
-      delay: options.delay ?? 0,
-      scrollTrigger: {
-        trigger: options.trigger ?? targets,
-        start: 'top 92%',
-        toggleActions: 'play none none none',
-      },
-    }
-  );
+  gsap.from(targets, {
+    opacity: 0,
+    y: options.y ?? 30,
+    duration: options.duration ?? 0.7,
+    ease: 'power3.out',
+    stagger: options.stagger ?? 0,
+    delay: options.delay ?? 0,
+    scrollTrigger: {
+      trigger: options.trigger ?? targets,
+      start: 'top 92%',
+      toggleActions: 'play none none none',
+    },
+  });
 }
 
 /* =============================================

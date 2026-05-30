@@ -720,7 +720,6 @@ h1, h2, h3, h4, h5, h6 {
 /* INDIVIDUAL SHAPE POSITIONS */
 .hero-shape {
   position: absolute;
-  opacity: 0;
 }
 .hero-shape--star1  { top: 12%; left: 8%;   }
 .hero-shape--star2  { top: 20%; right: 12%; }
@@ -1116,7 +1115,6 @@ h1, h2, h3, h4, h5, h6 {
   transition: transform 0.3s ease,
               box-shadow 0.3s ease,
               border-color 0.3s ease;
-  opacity: 0;
 }
 
 .service-card:hover {
