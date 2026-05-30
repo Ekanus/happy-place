@@ -389,6 +389,17 @@ h1, h2, h3, h4, h5, h6 {
   box-shadow: 0 -8px 40px rgba(0,0,0,0.08);
 }
 
+.narrative-line {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 120px;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+}
+
 .stats {
   position: relative;
   z-index: 3;
@@ -922,6 +933,7 @@ main {
 
 .narrative__panels {
   position: relative;
+  z-index: 1;
 }
 
 .narrative__panel {
