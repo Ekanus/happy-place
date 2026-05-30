@@ -390,7 +390,6 @@ main {
   z-index: 2;
   background: #ffffff;
   border-radius: 32px 32px 0 0;
-  margin-top: -32px;
   overflow: visible;
   box-shadow: 0 -8px 40px rgba(0,0,0,0.08);
 }
@@ -703,8 +702,7 @@ main {
 .hero {
   height: 100svh;
   background: #90C4AE;
-  position: sticky;
-  top: 0;
+  position: relative;
   z-index: 1;
   border-radius: 0;
   box-shadow: none;
