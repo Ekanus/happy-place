@@ -524,9 +524,35 @@ function initContactPageForm() {
 }
 
 /* =============================================
+   STACKED SECTIONS SCROLL ANIMATION
+   ============================================= */
+function initStackedSections() {
+  const sections = document.querySelectorAll(
+    '.narrative, .stats, .services, .how-it-works, .difficulties, .testimonials, .footer'
+  );
+
+  sections.forEach((section) => {
+    gsap.fromTo(section,
+      { yPercent: 8 },
+      {
+        yPercent: 0,
+        ease: 'none',
+        scrollTrigger: {
+          trigger: section,
+          start: 'top bottom',
+          end: 'top top',
+          scrub: true,
+        }
+      }
+    );
+  });
+}
+
+/* =============================================
    INIT
    ============================================= */
 document.addEventListener('DOMContentLoaded', () => {
+  initStackedSections();
   initAnnouncement();
   initNavScroll();
   initMobileMenu();
