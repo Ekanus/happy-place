@@ -380,6 +380,11 @@ h1, h2, h3, h4, h5, h6 {
 /* hero stacking handled in HERO section below */
 
 /* Stacked card flow — full section rules */
+main {
+  position: relative;
+  z-index: 2;
+}
+
 .narrative {
   position: relative;
   z-index: 2;
@@ -387,6 +392,7 @@ h1, h2, h3, h4, h5, h6 {
   border-radius: 32px 32px 0 0;
   margin-top: -32px;
   overflow: visible;
+  box-shadow: 0 -8px 40px rgba(0,0,0,0.08);
 }
 
 .stats {
@@ -396,47 +402,47 @@ h1, h2, h3, h4, h5, h6 {
   border-radius: 32px 32px 0 0;
   margin-top: -32px;
   padding: 6rem 0;
-  box-shadow: 0 -12px 48px rgba(0,0,0,0.1);
+  box-shadow: 0 -8px 40px rgba(0,0,0,0.15);
 }
 
 .services {
   position: relative;
   z-index: 4;
-  background: #ffffff;
+  background: #F7F3FF;
   border-radius: 32px 32px 0 0;
   margin-top: -32px;
   padding: 7rem 0;
-  box-shadow: 0 -12px 48px rgba(0,0,0,0.06);
+  box-shadow: 0 -8px 40px rgba(0,0,0,0.06);
 }
 
 .how-it-works {
   position: relative;
   z-index: 5;
-  background: #F7FBFA;
+  background: #ffffff;
   border-radius: 32px 32px 0 0;
   margin-top: -32px;
   padding: 7rem 0;
-  box-shadow: 0 -12px 48px rgba(0,0,0,0.04);
+  box-shadow: 0 -8px 40px rgba(0,0,0,0.06);
 }
 
 .difficulties {
   position: relative;
   z-index: 6;
-  background: #ffffff;
+  background: #FDF8F0;
   border-radius: 32px 32px 0 0;
   margin-top: -32px;
   padding: 7rem 0;
-  box-shadow: 0 -12px 48px rgba(0,0,0,0.04);
+  box-shadow: 0 -8px 40px rgba(0,0,0,0.06);
 }
 
 .testimonials {
   position: relative;
   z-index: 7;
-  background: #F7FBFA;
+  background: #F9F0F4;
   border-radius: 32px 32px 0 0;
   margin-top: -32px;
   padding: 7rem 0 8rem;
-  box-shadow: 0 -12px 48px rgba(0,0,0,0.04);
+  box-shadow: 0 -8px 40px rgba(0,0,0,0.06);
 }
 
 /* Mobile grid fixes */
@@ -546,8 +552,7 @@ h1, h2, h3, h4, h5, h6 {
   background: #C8DED8;
   border-radius: 32px 32px 0 0;
   margin-top: -32px;
-  box-shadow: 0 -12px 48px rgba(0,0,0,0.06);
-  padding: 5rem 0 2.5rem;
+  box-shadow: 0 -8px 40px rgba(0,0,0,0.06);
 }
 
 .footer__top {
@@ -696,9 +701,10 @@ h1, h2, h3, h4, h5, h6 {
 
 /* HERO BASE */
 .hero {
-  min-height: 100svh;
+  height: 100svh;
   background: #90C4AE;
-  position: relative;
+  position: sticky;
+  top: 0;
   z-index: 1;
   border-radius: 0;
   box-shadow: none;
@@ -858,8 +864,8 @@ h1, h2, h3, h4, h5, h6 {
 /* MOBILE */
 @media (max-width: 768px) {
   .hero {
+    height: 100svh;
     padding: 4.5rem 1.25rem 2rem;
-    min-height: 100svh;
   }
   .hero-center {
     gap: 0.25rem;
