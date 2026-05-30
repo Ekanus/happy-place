@@ -158,12 +158,11 @@ function initNarrativeLine() {
   const path = document.getElementById('narrative-path');
   if (!path) return;
 
-  const length = path.getTotalLength();
+  // Use a fixed large length instead of getTotalLength()
+  const length = 2000;
 
-  gsap.set(path, {
-    strokeDasharray: length,
-    strokeDashoffset: length,
-  });
+  path.style.strokeDasharray = length;
+  path.style.strokeDashoffset = length;
 
   gsap.to(path, {
     strokeDashoffset: 0,
