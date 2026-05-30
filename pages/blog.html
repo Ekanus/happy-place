@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blog — Happy Place</title>
+  <meta name="description" content="Άρθρα, συμβουλές και νέα για γονείς από το Happy Place — Κέντρο Ειδικής Αγωγής στις Μοίρες." />
+  <meta property="og:title" content="Blog — Happy Place" />
+  <meta property="og:description" content="Άρθρα, συμβουλές και νέα για γονείς από το Happy Place — Κέντρο Ειδικής Αγωγής στις Μοίρες." />
+  <meta property="og:image" content="../happy_place.jpg" />
+  <meta property="og:type" content="website" />
+  <link rel="icon" type="image/png" href="../happy_place.jpg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../style.css" />
+</head>
+<body>
+
+  <!-- ANNOUNCEMENT BANNER -->
+  <div id="announcement" class="announcement" style="display:none" role="alert" aria-live="polite">
+    <div class="container announcement__inner">
+      <p class="announcement__text">
+        <span id="announcement-text"></span>
+        <a id="announcement-cta" class="announcement__cta" href="#"></a>
+      </p>
+      <button class="announcement__dismiss" aria-label="Κλείσιμο">×</button>
+    </div>
+  </div>
+
+  <!-- NAV -->
+  <nav id="nav" class="nav" aria-label="Κύρια πλοήγηση">
+    <!-- Pill 1: Logo + Links -->
+    <div class="nav__pill-main">
+      <a href="/" class="nav__logo-text" aria-label="Happy Place">
+        <span class="nav__logo-happy">Happy</span>
+        <span class="nav__logo-place">Place</span>
+      </a>
+      <ul class="nav__links" role="list">
+        <li><a href="/" class="nav__link">Αρχική</a></li>
+        <li><a href="/services" class="nav__link">Υπηρεσίες</a></li>
+        <li><a href="/blog" class="nav__link nav__link--active">Blog</a></li>
+        <li><a href="/contact" class="nav__link">Επικοινωνία</a></li>
+      </ul>
+    </div>
+
+    <!-- Pill 2: CTA alone -->
+    <div class="nav__pill-cta">
+      <a href="/contact" class="nav__cta">Δωρεάν Αξιολόγηση</a>
+    </div>
+
+    <!-- Mobile burger (outside pills) -->
+    <button class="nav__burger" id="nav-burger"
+      aria-label="Άνοιγμα μενού"
+      aria-expanded="false"
+      aria-controls="nav-overlay">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- MOBILE OVERLAY -->
+  <div class="nav__overlay" id="nav-overlay" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Μενού πλοήγησης">
+    <ul class="nav__overlay-links" role="list">
+      <li><a href="/" class="nav__overlay-link">Αρχική</a></li>
+      <li><a href="/services" class="nav__overlay-link">Υπηρεσίες</a></li>
+      <li><a href="/blog" class="nav__overlay-link">Blog</a></li>
+      <li><a href="/contact" class="nav__overlay-link">Επικοινωνία</a></li>
+    </ul>
+    <a href="/contact" class="btn btn--primary nav__overlay-cta">Δωρεάν Αξιολόγηση</a>
+  </div>
+
+  <!-- MAIN -->
+  <main id="blog-main">
+
+    <!-- PAGE HERO -->
+    <section class="page-hero">
+      <div class="container page-hero__inner">
+        <span class="section-eyebrow">BLOG</span>
+        <h1 class="page-hero__title">Άρθρα &amp; Νέα</h1>
+      </div>
+    </section>
+
+    <!-- SECTION 1: BLOG GRID -->
+    <section class="section blog-grid-section">
+      <div class="container">
+
+        <div class="blog-grid__header">
+          <span class="section-eyebrow">ΑΡΘΡΑ &amp; ΝΕΑ</span>
+          <h2 class="section-headline">Χρήσιμες πληροφορίες για γονείς.</h2>
+          <p class="section-intro">Άρθρα, συμβουλές και νέα από την ομάδα του Happy Place.</p>
+        </div>
+
+        <div class="blog-grid">
+
+          <!-- Card 1 -->
+          <article class="blog-card">
+            <div class="blog-card__image" aria-hidden="true">
+              <span class="blog-card__emoji">📚</span>
+            </div>
+            <div class="blog-card__content">
+              <div class="blog-card__meta">
+                <span class="blog-card__category">Μαθησιακές Δυσκολίες</span>
+                <time class="blog-card__date">15 Ιανουαρίου 2025</time>
+              </div>
+              <h3 class="blog-card__title">Πώς να βοηθήσετε το παιδί σας με δυσλεξία στο σπίτι</h3>
+              <p class="blog-card__excerpt">Πρακτικές συμβουλές για γονείς παιδιών με δυσλεξία...</p>
+              <a href="#" class="blog-card__link">Διαβάστε περισσότερα →</a>
+            </div>
+          </article>
+
+          <!-- Card 2 -->
+          <article class="blog-card">
+            <div class="blog-card__image" aria-hidden="true">
+              <span class="blog-card__emoji">🧠</span>
+            </div>
+            <div class="blog-card__content">
+              <div class="blog-card__meta">
+                <span class="blog-card__category">ΔΕΠ-Υ</span>
+                <time class="blog-card__date">8 Ιανουαρίου 2025</time>
+              </div>
+              <h3 class="blog-card__title">ΔΕΠ-Υ: Τι πρέπει να ξέρουν οι γονείς</h3>
+              <p class="blog-card__excerpt">Κατανοώντας τη Διαταραχή Ελλειμματικής Προσοχής...</p>
+              <a href="#" class="blog-card__link">Διαβάστε περισσότερα →</a>
+            </div>
+          </article>
+
+          <!-- Card 3 -->
+          <article class="blog-card">
+            <div class="blog-card__image" aria-hidden="true">
+              <span class="blog-card__emoji">⭐</span>
+            </div>
+            <div class="blog-card__content">
+              <div class="blog-card__meta">
+                <span class="blog-card__category">Συμβουλές</span>
+                <time class="blog-card__date">2 Ιανουαρίου 2025</time>
+              </div>
+              <h3 class="blog-card__title">5 τρόποι να ενισχύσετε την αυτοπεποίθηση του παιδιού σας</h3>
+              <p class="blog-card__excerpt">Απλές καθημερινές συνήθειες που κάνουν τη διαφορά...</p>
+              <a href="#" class="blog-card__link">Διαβάστε περισσότερα →</a>
+            </div>
+          </article>
+
+          <!-- Card 4 -->
+          <article class="blog-card">
+            <div class="blog-card__image" aria-hidden="true">
+              <span class="blog-card__emoji">🎨</span>
+            </div>
+            <div class="blog-card__content">
+              <div class="blog-card__meta">
+                <span class="blog-card__category">Δημιουργικότητα</span>
+                <time class="blog-card__date">20 Δεκεμβρίου 2024</time>
+              </div>
+              <h3 class="blog-card__title">Γιατί η δημιουργική απασχόληση είναι απαραίτητη</h3>
+              <p class="blog-card__excerpt">Η σημασία του παιχνιδιού και της δημιουργίας...</p>
+              <a href="#" class="blog-card__link">Διαβάστε περισσότερα →</a>
+            </div>
+          </article>
+
+          <!-- Card 5 -->
+          <article class="blog-card">
+            <div class="blog-card__image" aria-hidden="true">
+              <span class="blog-card__emoji">🏫</span>
+            </div>
+            <div class="blog-card__content">
+              <div class="blog-card__meta">
+                <span class="blog-card__category">Σχολείο</span>
+                <time class="blog-card__date">12 Δεκεμβρίου 2024</time>
+              </div>
+              <h3 class="blog-card__title">Πώς να προετοιμάσετε το παιδί για τη νέα σχολική χρονιά</h3>
+              <p class="blog-card__excerpt">Πρακτικές συμβουλές για ομαλή μετάβαση...</p>
+              <a href="#" class="blog-card__link">Διαβάστε περισσότερα →</a>
+            </div>
+          </article>
+
+          <!-- Card 6 -->
+          <article class="blog-card">
+            <div class="blog-card__image" aria-hidden="true">
+              <span class="blog-card__emoji">👨‍👩‍👧</span>
+            </div>
+            <div class="blog-card__content">
+              <div class="blog-card__meta">
+                <span class="blog-card__category">Γονείς</span>
+                <time class="blog-card__date">5 Δεκεμβρίου 2024</time>
+              </div>
+              <h3 class="blog-card__title">Η σημασία της συμβουλευτικής για γονείς</h3>
+              <p class="blog-card__excerpt">Πώς η υποστήριξη των γονέων βοηθά το παιδί...</p>
+              <a href="#" class="blog-card__link">Διαβάστε περισσότερα →</a>
+            </div>
+          </article>
+
+        </div><!-- /.blog-grid -->
+      </div>
+    </section>
+
+    <!-- SECTION 2: NEWSLETTER CTA -->
+    <section class="newsletter-section">
+      <div class="container newsletter-section__inner">
+        <span class="section-eyebrow">ΜΕΙΝΕΤΕ ΕΝΗΜΕΡΩΜΕΝΟΙ</span>
+        <h2 class="section-headline">Λάβετε χρήσιμες συμβουλές για γονείς.</h2>
+        <p class="section-intro">Εγγραφείτε στο newsletter μας και λάβετε δωρεάν οδηγούς και άρθρα κατευθείαν στο email σας.</p>
+
+        <form class="newsletter-form" id="newsletter-form" novalidate>
+          <input
+            type="email"
+            class="newsletter-form__input"
+            name="email"
+            placeholder="Το email σας"
+            required
+            autocomplete="email"
+            aria-label="Email για εγγραφή"
+          />
+          <button type="submit" class="btn btn--primary newsletter-form__btn">Εγγραφή</button>
+        </form>
+
+        <p id="newsletter-success" class="newsletter-success">
+          ✓ Εγγραφήκατε επιτυχώς! Σας ευχαριστούμε.
+        </p>
+
+        <p class="newsletter-section__note">Χωρίς spam. Διαγραφή οποιαδήποτε στιγμή.</p>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+
+      <!-- Top: CTA text left, links right -->
+      <div class="footer__top">
+        <div class="footer__left">
+          <p class="footer__pre">Επικοινωνήστε μαζί μας</p>
+          <h2 class="footer__headline">Ελάτε σε<br>επαφή.</h2>
+          <a href="/contact" class="footer__cta">
+            Κλείστε ραντεβού <span>→</span>
+          </a>
+        </div>
+        <div class="footer__right">
+          <div class="footer__col">
+            <p class="footer__col-title">Σελίδες</p>
+            <ul>
+              <li><a href="/" class="footer__link">Αρχική</a></li>
+              <li><a href="/services" class="footer__link">Υπηρεσίες</a></li>
+              <li><a href="/blog" class="footer__link">Blog</a></li>
+              <li><a href="/contact" class="footer__link">Επικοινωνία</a></li>
+            </ul>
+          </div>
+          <div class="footer__col">
+            <p class="footer__col-title">Επικοινωνία</p>
+            <ul>
+              <li><a href="tel:6943449049" class="footer__link">694 344 9049</a></li>
+              <li><a href="tel:2892300539" class="footer__link">2892 300 539</a></li>
+              <li><a href="mailto:happyplacemoires@gmail.com"
+                  class="footer__link">happyplacemoires@gmail.com</a></li>
+              <li><span class="footer__link footer__link--muted">
+                  Μάχης Κρήτης 109, Μοίρες</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bottom bar -->
+      <div class="footer__bottom">
+        <p class="footer__copy">© 2026 Happy Place.</p>
+        <a href="https://cerebro.gr" class="footer__powered"
+           target="_blank" rel="noopener">
+          Powered by: Cerebro Software
+        </a>
+      </div>
+
+    </div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
+  <script src="../main.js"></script>
+</body>
+</html>

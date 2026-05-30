@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Υπηρεσίες — Happy Place</title>
+  <meta name="description" content="Ειδική Διαπαιδαγώγηση, Καθημερινή Μελέτη, Συμβουλευτική, Επαγγελματικός Προσανατολισμός, Δημιουργική Απασχόληση. Κέντρο Ειδικής Αγωγής στις Μοίρες." />
+  <meta property="og:title" content="Υπηρεσίες — Happy Place" />
+  <meta property="og:description" content="Ειδική Διαπαιδαγώγηση, Καθημερινή Μελέτη, Συμβουλευτική, Επαγγελματικός Προσανατολισμός, Δημιουργική Απασχόληση." />
+  <meta property="og:image" content="../happy_place.jpg" />
+  <meta property="og:type" content="website" />
+  <link rel="icon" type="image/png" href="../happy_place.jpg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../style.css" />
+</head>
+<body>
+
+  <!-- ANNOUNCEMENT BANNER -->
+  <div id="announcement" class="announcement" style="display:none" role="alert" aria-live="polite">
+    <div class="container announcement__inner">
+      <p class="announcement__text">
+        <span id="announcement-text"></span>
+        <a id="announcement-cta" class="announcement__cta" href="#"></a>
+      </p>
+      <button class="announcement__dismiss" aria-label="Κλείσιμο">×</button>
+    </div>
+  </div>
+
+  <!-- NAV -->
+  <nav id="nav" class="nav" aria-label="Κύρια πλοήγηση">
+    <!-- Pill 1: Logo + Links -->
+    <div class="nav__pill-main">
+      <a href="/" class="nav__logo-text" aria-label="Happy Place">
+        <span class="nav__logo-happy">Happy</span>
+        <span class="nav__logo-place">Place</span>
+      </a>
+      <ul class="nav__links" role="list">
+        <li><a href="/" class="nav__link">Αρχική</a></li>
+        <li><a href="/services" class="nav__link nav__link--active">Υπηρεσίες</a></li>
+        <li><a href="/blog" class="nav__link">Blog</a></li>
+        <li><a href="/contact" class="nav__link">Επικοινωνία</a></li>
+      </ul>
+    </div>
+
+    <!-- Pill 2: CTA alone -->
+    <div class="nav__pill-cta">
+      <a href="/contact" class="nav__cta">Δωρεάν Αξιολόγηση</a>
+    </div>
+
+    <!-- Mobile burger (outside pills) -->
+    <button class="nav__burger" id="nav-burger"
+      aria-label="Άνοιγμα μενού"
+      aria-expanded="false"
+      aria-controls="nav-overlay">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- MOBILE OVERLAY -->
+  <div class="nav__overlay" id="nav-overlay" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Μενού πλοήγησης">
+    <ul class="nav__overlay-links" role="list">
+      <li><a href="/" class="nav__overlay-link">Αρχική</a></li>
+      <li><a href="/services" class="nav__overlay-link">Υπηρεσίες</a></li>
+      <li><a href="/blog" class="nav__overlay-link">Blog</a></li>
+      <li><a href="/contact" class="nav__overlay-link">Επικοινωνία</a></li>
+    </ul>
+    <a href="/contact" class="btn btn--primary nav__overlay-cta">Δωρεάν Αξιολόγηση</a>
+  </div>
+
+  <!-- MAIN -->
+  <main id="services-main">
+
+    <!-- PAGE HERO -->
+    <section class="page-hero">
+      <div class="container page-hero__inner">
+        <span class="section-eyebrow">ΥΠΗΡΕΣΙΕΣ</span>
+        <h1 class="page-hero__title">Όλες οι υπηρεσίες μας</h1>
+      </div>
+    </section>
+
+    <!-- SECTION 1: SERVICES DETAIL =================== -->
+    <section class="service-details-section">
+
+      <!-- SERVICE 1 — Ειδική Διαπαιδαγώγηση (odd: image left) -->
+      <div class="service-detail service-detail--odd">
+        <div class="container service-detail__inner">
+          <div class="service-detail__image">
+            <div class="service-detail__img-placeholder">
+              <span class="service-detail__img-emoji" aria-hidden="true">📚</span>
+            </div>
+          </div>
+          <div class="service-detail__content">
+            <span class="section-eyebrow">ΥΠΗΡΕΣΙΑ 01</span>
+            <h2 class="service-detail__title">Ειδική Διαπαιδαγώγηση</h2>
+            <p class="service-detail__body">Προσφέρουμε εξειδικευμένες συνεδρίες για παιδιά με αναπτυξιακές δυσκολίες. Κάθε πρόγραμμα είναι πλήρως εξατομικευμένο βάσει της αξιολόγησης του παιδιού.</p>
+            <ul class="service-detail__list" role="list">
+              <li class="service-detail__list-item"><span class="service-detail__check" aria-hidden="true">✓</span>ΔΕΠ-Υ &amp; Διαταραχές Προσοχής</li>
+              <li class="service-detail__list-item"><span class="service-detail__check" aria-hidden="true">✓</span>ΔΑΦ (Διαταραχή Αυτιστικού Φάσματος)</li>
+              <li class="service-detail__list-item"><span class="service-detail__check" aria-hidden="true">✓</span>Διαταραχές Λόγου &amp; Επικοινωνίας</li>
+              <li class="service-detail__list-item"><span class="service-detail__check" aria-hidden="true">✓</span>Κινητικός Συντονισμός &amp; Συμπεριφορά</li>
+            </ul>
+            <div><a href="/contact" class="btn btn--primary">Κλείστε Δωρεάν Αξιολόγηση</a></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SERVICE 2 — Καθημερινή Μελέτη (even: text left) -->
+      <div class="service-detail service-detail--even">
+        <div class="container service-detail__inner">
+          <div class="service-detail__image">
+            <div class="service-detail__img-placeholder">
+              <span class="service-detail__img-emoji" aria-hidden="true">✏️</span>
+            </div>
+          </div>
+          <div class="service-detail__content">
+            <span class="section-eyebrow">ΥΠΗΡΕΣΙΑ 02</span>
+            <h2 class="service-detail__title">Καθημερινή Μελέτη</h2>
+            <p class="service-detail__body">Οργανωμένη και στοχευμένη μελέτη για παιδιά Δημοτικού και Γυμνασίου. Δεν είναι απλώς φροντιστήριο — είναι εξατομικευμένη εκπαιδευτική υποστήριξη.</p>
+            <ul class="service-detail__list" role="list">
+              <li class="service-detail__list-item"><span class="service-detail__check" aria-hidden="true">✓</span>Παιδιά Δημοτικού Σχολείου</li>
+              <li class="service-detail__list-item"><span class="service-detail__check" aria-hidden="true">✓</span>Παιδιά Γυμνασίου</li>
+              <li class="service-detail__list-item"><span class="service-detail__check" aria-hidden="true">✓</span>Εξατομικευμένο πρόγραμμα μελέτης</li>
+              <li class="service-detail__list-item"><span class="service-detail__check" aria-hidden="true">✓</span>Παρακολούθηση προόδου</li>
+            </ul>
+            <div><a href="/contact" class="btn btn--primary">Κλείστε Δωρεάν Αξιολόγηση</a></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SERVICE 3 — Συμβουλευτική Ψυχολογία (odd: image left) -->
+      <div class="service-detail service-detail--odd">
+        <div class="container service-detail__inner">
+          <div class="service-detail__image">
+            <div class="service-detail__img-placeholder">
+              <span class="service-detail__img-emoji" aria-hidden="true">💬</span>
+            </div>
+          </div>
+          <div class="service-detail__content">
+            <span class="section-eyebrow">ΥΠΗΡΕΣΙΑ 03</span>
+            <h2 class="service-detail__title">Συμβουλευτική Ψυχολογία</h2>
+            <p class="service-detail__body">Συνεδρίες υποστήριξης για παιδιά, εφήβους και γονείς. Δημιουργούμε ένα ασφαλές περιβάλλον έκφρασης και ανάπτυξης.</p>
+            <ul class="service-detail__list" role="list">
+              <li class="service-detail__list-item"><span class="service-detail__check" aria-hidden="true">✓</span>Συνεδρίες για παιδιά &amp; εφήβους</li>
+              <li class="service-detail__list-item"><span class="service-detail__check" aria-hidden="true">✓</span>Συμβουλευτική γονέων</li>
+              <li class="service-detail__list-item"><span class="service-detail__check" aria-hidden="true">✓</span>Ενήλικες &amp; επαγγελματικό άγχος</li>
+              <li class="service-detail__list-item"><span class="service-detail__check" aria-hidden="true">✓</span>Ομαδικές συνεδρίες</li>
+            </ul>
+            <div><a href="/contact" class="btn btn--primary">Κλείστε Δωρεάν Αξιολόγηση</a></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SERVICE 4 — Επαγγελματικός Προσανατολισμός (even: text left) -->
+      <div class="service-detail service-detail--even">
+        <div class="container service-detail__inner">
+          <div class="service-detail__image">
+            <div class="service-detail__img-placeholder">
+              <span class="service-detail__img-emoji" aria-hidden="true">🎯</span>
+            </div>
+          </div>
+          <div class="service-detail__content">
+            <span class="section-eyebrow">ΥΠΗΡΕΣΙΑ 04</span>
+            <h2 class="service-detail__title">Επαγγελματικός Προσανατολισμός</h2>
+            <p class="service-detail__body">Βοηθάμε εφήβους να ανακαλύψουν τα ταλέντα και τα ενδιαφέροντά τους και να χαράξουν το επαγγελματικό τους μονοπάτι με αυτοπεποίθηση.</p>
+            <ul class="service-detail__list" role="list">
+              <li class="service-detail__list-item"><span class="service-detail__check" aria-hidden="true">✓</span>Αξιολόγηση κλίσεων &amp; ενδιαφερόντων</li>
+              <li class="service-detail__list-item"><span class="service-detail__check" aria-hidden="true">✓</span>Επιλογή σπουδών &amp; καριέρας</li>
+              <li class="service-detail__list-item"><span class="service-detail__check" aria-hidden="true">✓</span>Ανάπτυξη αυτοπεποίθησης</li>
+              <li class="service-detail__list-item"><span class="service-detail__check" aria-hidden="true">✓</span>Προετοιμασία για το μέλλον</li>
+            </ul>
+            <div><a href="/contact" class="btn btn--primary">Κλείστε Δωρεάν Αξιολόγηση</a></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SERVICE 5 — Δημιουργική Απασχόληση (odd: image left) -->
+      <div class="service-detail service-detail--odd">
+        <div class="container service-detail__inner">
+          <div class="service-detail__image">
+            <div class="service-detail__img-placeholder">
+              <span class="service-detail__img-emoji" aria-hidden="true">🎨</span>
+            </div>
+          </div>
+          <div class="service-detail__content">
+            <span class="section-eyebrow">ΥΠΗΡΕΣΙΑ 05</span>
+            <h2 class="service-detail__title">Δημιουργική Απασχόληση</h2>
+            <p class="service-detail__body">Δημιουργικές δραστηριότητες για παιδιά 4–12 ετών που ενισχύουν τη φαντασία, την αυτοέκφραση και την κοινωνικοποίηση μέσα από τη χαρά.</p>
+            <ul class="service-detail__list" role="list">
+              <li class="service-detail__list-item"><span class="service-detail__check" aria-hidden="true">✓</span>Παιδιά 4–12 ετών</li>
+              <li class="service-detail__list-item"><span class="service-detail__check" aria-hidden="true">✓</span>Εικαστικές &amp; χειροτεχνίες</li>
+              <li class="service-detail__list-item"><span class="service-detail__check" aria-hidden="true">✓</span>Θεματικά camp</li>
+              <li class="service-detail__list-item"><span class="service-detail__check" aria-hidden="true">✓</span>Ομαδικές δραστηριότητες</li>
+            </ul>
+            <div><a href="/contact" class="btn btn--primary">Κλείστε Δωρεάν Αξιολόγηση</a></div>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- SECTION 2: CTA BANNER ======================== -->
+    <section class="services-cta-banner">
+      <div class="container services-cta-banner__inner">
+        <h2 class="services-cta-banner__title">Δεν ξέρετε από πού να ξεκινήσετε;</h2>
+        <p class="services-cta-banner__body">Η δωρεάν αξιολόγηση μας θα σας δείξει ακριβώς τι χρειάζεται το παιδί σας.</p>
+        <a href="/contact" class="btn btn--white">Κλείστε Δωρεάν Αξιολόγηση</a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+
+      <!-- Top: CTA text left, links right -->
+      <div class="footer__top">
+        <div class="footer__left">
+          <p class="footer__pre">Επικοινωνήστε μαζί μας</p>
+          <h2 class="footer__headline">Ελάτε σε<br>επαφή.</h2>
+          <a href="/contact" class="footer__cta">
+            Κλείστε ραντεβού <span>→</span>
+          </a>
+        </div>
+        <div class="footer__right">
+          <div class="footer__col">
+            <p class="footer__col-title">Σελίδες</p>
+            <ul>
+              <li><a href="/" class="footer__link">Αρχική</a></li>
+              <li><a href="/services" class="footer__link">Υπηρεσίες</a></li>
+              <li><a href="/blog" class="footer__link">Blog</a></li>
+              <li><a href="/contact" class="footer__link">Επικοινωνία</a></li>
+            </ul>
+          </div>
+          <div class="footer__col">
+            <p class="footer__col-title">Επικοινωνία</p>
+            <ul>
+              <li><a href="tel:6943449049" class="footer__link">694 344 9049</a></li>
+              <li><a href="tel:2892300539" class="footer__link">2892 300 539</a></li>
+              <li><a href="mailto:happyplacemoires@gmail.com"
+                  class="footer__link">happyplacemoires@gmail.com</a></li>
+              <li><span class="footer__link footer__link--muted">
+                  Μάχης Κρήτης 109, Μοίρες</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bottom bar -->
+      <div class="footer__bottom">
+        <p class="footer__copy">© 2026 Happy Place.</p>
+        <a href="https://cerebro.gr" class="footer__powered"
+           target="_blank" rel="noopener">
+          Powered by: Cerebro Software
+        </a>
+      </div>
+
+    </div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
+  <script src="../main.js"></script>
+</body>
+</html>

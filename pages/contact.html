@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Επικοινωνία — Happy Place</title>
+  <meta name="description" content="Επικοινωνήστε με το Happy Place — Κέντρο Ειδικής Αγωγής στις Μοίρες. Δωρεάν πρώτη αξιολόγηση." />
+  <meta property="og:title" content="Επικοινωνία — Happy Place" />
+  <meta property="og:description" content="Επικοινωνήστε με το Happy Place — Κέντρο Ειδικής Αγωγής στις Μοίρες. Δωρεάν πρώτη αξιολόγηση." />
+  <meta property="og:image" content="../happy_place.jpg" />
+  <meta property="og:type" content="website" />
+  <link rel="icon" type="image/png" href="../happy_place.jpg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../style.css" />
+</head>
+<body>
+
+  <!-- ANNOUNCEMENT BANNER -->
+  <div id="announcement" class="announcement" style="display:none" role="alert" aria-live="polite">
+    <div class="container announcement__inner">
+      <p class="announcement__text">
+        <span id="announcement-text"></span>
+        <a id="announcement-cta" class="announcement__cta" href="#"></a>
+      </p>
+      <button class="announcement__dismiss" aria-label="Κλείσιμο">×</button>
+    </div>
+  </div>
+
+  <!-- NAV -->
+  <nav id="nav" class="nav" aria-label="Κύρια πλοήγηση">
+    <!-- Pill 1: Logo + Links -->
+    <div class="nav__pill-main">
+      <a href="/" class="nav__logo-text" aria-label="Happy Place">
+        <span class="nav__logo-happy">Happy</span>
+        <span class="nav__logo-place">Place</span>
+      </a>
+      <ul class="nav__links" role="list">
+        <li><a href="/" class="nav__link">Αρχική</a></li>
+        <li><a href="/services" class="nav__link">Υπηρεσίες</a></li>
+        <li><a href="/blog" class="nav__link">Blog</a></li>
+        <li><a href="/contact" class="nav__link nav__link--active">Επικοινωνία</a></li>
+      </ul>
+    </div>
+
+    <!-- Pill 2: CTA alone -->
+    <div class="nav__pill-cta">
+      <a href="#contact" class="nav__cta">Δωρεάν Αξιολόγηση</a>
+    </div>
+
+    <!-- Mobile burger (outside pills) -->
+    <button class="nav__burger" id="nav-burger"
+      aria-label="Άνοιγμα μενού"
+      aria-expanded="false"
+      aria-controls="nav-overlay">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- MOBILE OVERLAY -->
+  <div class="nav__overlay" id="nav-overlay" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Μενού πλοήγησης">
+    <ul class="nav__overlay-links" role="list">
+      <li><a href="/" class="nav__overlay-link">Αρχική</a></li>
+      <li><a href="/services" class="nav__overlay-link">Υπηρεσίες</a></li>
+      <li><a href="/blog" class="nav__overlay-link">Blog</a></li>
+      <li><a href="/contact" class="nav__overlay-link">Επικοινωνία</a></li>
+    </ul>
+    <a href="#contact" class="btn btn--primary nav__overlay-cta">Δωρεάν Αξιολόγηση</a>
+  </div>
+
+  <!-- MAIN -->
+  <main id="contact-main">
+
+    <!-- PAGE HERO -->
+    <section class="page-hero">
+      <div class="container page-hero__inner">
+        <span class="section-eyebrow">ΕΠΙΚΟΙΝΩΝΙΑ</span>
+        <h1 class="page-hero__title">Μιλήστε μαζί μας</h1>
+      </div>
+    </section>
+
+    <!-- SECTION 1: CONTACT LAYOUT =================== -->
+    <section class="contact-page-section">
+      <div class="container contact-page-inner" id="contact">
+
+        <!-- LEFT: FORM -->
+        <div class="contact-page-form__wrap">
+          <h2 class="contact-page-form__title">Στείλτε μας μήνυμα</h2>
+          <p class="contact-page-form__subtitle">Θα επικοινωνήσουμε μαζί σας εντός 24 ωρών.</p>
+
+          <div class="contact-page-form__status contact-page-form__status--success" id="form-success" role="alert" aria-live="polite">
+            <span aria-hidden="true">✅</span>
+            <span>Το μήνυμά σας εστάλη! Θα επικοινωνήσουμε σύντομα.</span>
+          </div>
+          <div class="contact-page-form__status contact-page-form__status--error" id="form-error" role="alert" aria-live="polite">
+            <span aria-hidden="true">❌</span>
+            <span>Κάτι πήγε στραβά. Δοκιμάστε ξανά ή καλέστε μας.</span>
+          </div>
+
+          <form id="contact-page-form" class="contact-page-form__grid" novalidate>
+            <div class="contact-form__field">
+              <label class="contact-form__label" for="cp-name">Όνομα &amp; Επώνυμο <abbr title="υποχρεωτικό" style="text-decoration:none;color:var(--c-primary)">*</abbr></label>
+              <input class="contact-form__input" id="cp-name" name="name" type="text" placeholder="π.χ. Μαρία Παπαδοπούλου" required autocomplete="name" />
+            </div>
+            <div class="contact-form__field">
+              <label class="contact-form__label" for="cp-phone">Τηλέφωνο <abbr title="υποχρεωτικό" style="text-decoration:none;color:var(--c-primary)">*</abbr></label>
+              <input class="contact-form__input" id="cp-phone" name="phone" type="tel" placeholder="π.χ. 694 000 0000" required autocomplete="tel" />
+            </div>
+            <div class="contact-form__field">
+              <label class="contact-form__label" for="cp-email">Email <abbr title="υποχρεωτικό" style="text-decoration:none;color:var(--c-primary)">*</abbr></label>
+              <input class="contact-form__input" id="cp-email" name="email" type="email" placeholder="π.χ. email@example.com" required autocomplete="email" />
+            </div>
+            <div class="contact-form__field">
+              <label class="contact-form__label" for="cp-age">Ηλικία παιδιού</label>
+              <input class="contact-form__input" id="cp-age" name="childAge" type="number" min="1" max="25" placeholder="π.χ. 8" />
+            </div>
+            <div class="contact-form__field contact-page-form__field--full">
+              <label class="contact-form__label" for="cp-interest">Ενδιαφέρον</label>
+              <select class="contact-form__input contact-form__select" id="cp-interest" name="interest">
+                <option value="">Επιλέξτε υπηρεσία</option>
+                <option value="eidiki">Ειδική Διαπαιδαγώγηση</option>
+                <option value="meleti">Καθημερινή Μελέτη</option>
+                <option value="symvouleutiki">Συμβουλευτική Ψυχολογία</option>
+                <option value="epaggelmatikos">Επαγγελματικός Προσανατολισμός</option>
+                <option value="dimiourgiki">Δημιουργική Απασχόληση</option>
+                <option value="axiologisi">Δωρεάν Αξιολόγηση</option>
+                <option value="pliroforia">Γενική Πληροφόρηση</option>
+              </select>
+            </div>
+            <div class="contact-form__field contact-page-form__field--full">
+              <label class="contact-form__label" for="cp-message">Μήνυμα</label>
+              <textarea class="contact-form__input contact-form__textarea" id="cp-message" name="message" rows="5" placeholder="Πείτε μας λίγα λόγια..."></textarea>
+            </div>
+            <div class="contact-page-form__field--full">
+              <label class="contact-page-form__checkbox-wrap">
+                <input type="checkbox" name="consent" required />
+                Συμφωνώ με την επεξεργασία των δεδομένων μου.
+              </label>
+            </div>
+            <div class="contact-page-form__field--full">
+              <button type="submit" id="cp-submit" class="btn btn--primary contact-form__submit">
+                Αποστολή Μηνύματος
+              </button>
+            </div>
+          </form>
+        </div>
+
+        <!-- RIGHT: CONTACT INFO CARD -->
+        <aside class="contact-info-card">
+          <h3 class="contact-info-card__title">Στοιχεία Επικοινωνίας</h3>
+          <a href="tel:6943449049" class="contact-info-card__phone-main">📞 694 344 9049</a>
+          <div class="contact-info-card__item">
+            <span aria-hidden="true">📞</span>
+            <a href="tel:2892300539" class="contact-info-card__link">2892 300 539</a>
+          </div>
+          <div class="contact-info-card__item">
+            <span aria-hidden="true">📧</span>
+            <a href="mailto:happyplacemoires@gmail.com" class="contact-info-card__link">happyplacemoires@gmail.com</a>
+          </div>
+          <div class="contact-info-card__item">
+            <span aria-hidden="true">📍</span>
+            <span>Μάχης Κρήτης 109, Καπαριανά - Μοίρες</span>
+          </div>
+          <div class="contact-info-card__item">
+            <span aria-hidden="true">🕐</span>
+            <span>Κατόπιν ραντεβού: 09:00–12:00</span>
+          </div>
+          <hr class="contact-info-card__divider" aria-hidden="true" />
+          <span class="contact-info-card__badge">✓ Δωρεάν Πρώτη Αξιολόγηση</span>
+          <p class="contact-info-card__badge-note">Η πρώτη συνάντηση είναι πάντα δωρεάν.</p>
+        </aside>
+
+      </div>
+    </section>
+
+    <!-- SECTION 2: GOOGLE MAPS ====================== -->
+    <div class="contact-map">
+      <div class="container">
+        <div class="contact-map__frame">
+          <iframe
+            src="https://maps.google.com/maps?q=Μάχης+Κρήτης+109,+Καπαριανά,+Μοίρες,+Κρήτη&output=embed&hl=el"
+            title="Χάρτης — Happy Place Μοίρες"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
+      </div>
+    </div>
+
+    <!-- SECTION 3: FAQ ============================== -->
+    <section class="faq-section">
+      <div class="container">
+        <div class="faq-section__header">
+          <span class="section-eyebrow">ΣΥΧΝΕΣ ΕΡΩΤΗΣΕΙΣ</span>
+          <h2 class="section-headline">Έχετε απορίες;</h2>
+        </div>
+        <div class="faq-list">
+
+          <div class="faq-item">
+            <button class="faq-item__question" aria-expanded="false">
+              Πόσο κοστίζει η πρώτη αξιολόγηση;
+              <svg class="faq-item__chevron" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M5 7.5l5 5 5-5" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <div class="faq-item__answer">
+              <div class="faq-item__answer-inner">Η πρώτη αξιολόγηση είναι εντελώς δωρεάν. Επικοινωνήστε μαζί μας για να κλείσετε ραντεβού.</div>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-item__question" aria-expanded="false">
+              Πόσο διαρκεί μια συνεδρία;
+              <svg class="faq-item__chevron" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M5 7.5l5 5 5-5" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <div class="faq-item__answer">
+              <div class="faq-item__answer-inner">Οι συνεδρίες διαρκούν συνήθως 45–60 λεπτά, ανάλογα με την ηλικία και τις ανάγκες του παιδιού.</div>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-item__question" aria-expanded="false">
+              Από ποια ηλικία δέχεστε παιδιά;
+              <svg class="faq-item__chevron" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M5 7.5l5 5 5-5" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <div class="faq-item__answer">
+              <div class="faq-item__answer-inner">Δεχόμαστε παιδιά από 4 ετών. Για τη δημιουργική απασχόληση ξεκινάμε από 4 χρονών, ενώ για τις υπόλοιπες υπηρεσίες δεχόμαστε και εφήβους.</div>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-item__question" aria-expanded="false">
+              Χρειάζεται παραπεμπτικό από γιατρό;
+              <svg class="faq-item__chevron" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M5 7.5l5 5 5-5" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <div class="faq-item__answer">
+              <div class="faq-item__answer-inner">Όχι, δεν χρειάζεται παραπεμπτικό. Μπορείτε να επικοινωνήσετε απευθείας μαζί μας.</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+
+      <!-- Top: CTA text left, links right -->
+      <div class="footer__top">
+        <div class="footer__left">
+          <p class="footer__pre">Επικοινωνήστε μαζί μας</p>
+          <h2 class="footer__headline">Ελάτε σε<br>επαφή.</h2>
+          <a href="/contact" class="footer__cta">
+            Κλείστε ραντεβού <span>→</span>
+          </a>
+        </div>
+        <div class="footer__right">
+          <div class="footer__col">
+            <p class="footer__col-title">Σελίδες</p>
+            <ul>
+              <li><a href="/" class="footer__link">Αρχική</a></li>
+              <li><a href="/services" class="footer__link">Υπηρεσίες</a></li>
+              <li><a href="/blog" class="footer__link">Blog</a></li>
+              <li><a href="/contact" class="footer__link">Επικοινωνία</a></li>
+            </ul>
+          </div>
+          <div class="footer__col">
+            <p class="footer__col-title">Επικοινωνία</p>
+            <ul>
+              <li><a href="tel:6943449049" class="footer__link">694 344 9049</a></li>
+              <li><a href="tel:2892300539" class="footer__link">2892 300 539</a></li>
+              <li><a href="mailto:happyplacemoires@gmail.com"
+                  class="footer__link">happyplacemoires@gmail.com</a></li>
+              <li><span class="footer__link footer__link--muted">
+                  Μάχης Κρήτης 109, Μοίρες</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bottom bar -->
+      <div class="footer__bottom">
+        <p class="footer__copy">© 2026 Happy Place.</p>
+        <a href="https://cerebro.gr" class="footer__powered"
+           target="_blank" rel="noopener">
+          Powered by: Cerebro Software
+        </a>
+      </div>
+
+    </div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
+  <script src="../main.js"></script>
+</body>
+</html>

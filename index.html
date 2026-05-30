@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Happy Place — Κέντρο Ειδικής Αγωγής στις Μοίρες</title>
+  <meta name="description" content="Το πρώτο πιστοποιημένο Κέντρο Ειδικής Αγωγής στις Μοίρες. Ειδική Διαπαιδαγώγηση, Συμβουλευτική, Δημιουργική Απασχόληση. Δωρεάν αξιολόγηση." />
+  <meta property="og:title" content="Happy Place — Κέντρο Ειδικής Αγωγής στις Μοίρες" />
+  <meta property="og:description" content="Το πρώτο πιστοποιημένο Κέντρο Ειδικής Αγωγής στις Μοίρες. Ειδική Διαπαιδαγώγηση, Συμβουλευτική, Δημιουργική Απασχόληση. Δωρεάν αξιολόγηση." />
+  <meta property="og:image" content="./happy_place.jpg" />
+  <meta property="og:type" content="website" />
+  <link rel="icon" type="image/png" href="./happy_place.jpg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ANNOUNCEMENT BANNER -->
+  <div id="announcement" class="announcement" style="display:none" role="alert" aria-live="polite">
+    <div class="container announcement__inner">
+      <p class="announcement__text">
+        <span id="announcement-text"></span>
+        <a id="announcement-cta" class="announcement__cta" href="#"></a>
+      </p>
+      <button class="announcement__dismiss" aria-label="Κλείσιμο">×</button>
+    </div>
+  </div>
+
+  <!-- NAV -->
+  <nav id="nav" class="nav" aria-label="Κύρια πλοήγηση">
+    <!-- Pill 1: Logo + Links -->
+    <div class="nav__pill-main">
+      <a href="/" class="nav__logo-text" aria-label="Happy Place">
+        <span class="nav__logo-happy">Happy</span>
+        <span class="nav__logo-place">Place</span>
+      </a>
+      <ul class="nav__links" role="list">
+        <li><a href="/" class="nav__link nav__link--active">Αρχική</a></li>
+        <li><a href="/services" class="nav__link">Υπηρεσίες</a></li>
+        <li><a href="/blog" class="nav__link">Blog</a></li>
+        <li><a href="/contact" class="nav__link">Επικοινωνία</a></li>
+      </ul>
+    </div>
+
+    <!-- Pill 2: CTA alone -->
+    <div class="nav__pill-cta">
+      <a href="#contact" class="nav__cta">Δωρεάν Αξιολόγηση</a>
+    </div>
+
+    <!-- Mobile burger (outside pills) -->
+    <button class="nav__burger" id="nav-burger"
+      aria-label="Άνοιγμα μενού"
+      aria-expanded="false"
+      aria-controls="nav-overlay">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- MOBILE OVERLAY -->
+  <div class="nav__overlay" id="nav-overlay" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Μενού πλοήγησης">
+    <ul class="nav__overlay-links" role="list">
+      <li><a href="/" class="nav__overlay-link">Αρχική</a></li>
+      <li><a href="/services" class="nav__overlay-link">Υπηρεσίες</a></li>
+      <li><a href="/blog" class="nav__overlay-link">Blog</a></li>
+      <li><a href="/contact" class="nav__overlay-link">Επικοινωνία</a></li>
+    </ul>
+    <a href="#contact" class="btn btn--primary nav__overlay-cta">Δωρεάν Αξιολόγηση</a>
+  </div>
+
+  <!-- MAIN -->
+  <main>
+
+    <!-- HERO -->
+    <section id="hero" class="hero">
+
+      <!-- Floating background shapes -->
+      <div class="hero-shapes" aria-hidden="true">
+
+        <!-- Stars -->
+        <svg class="hero-shape hero-shape--star1 float float-delay-1" width="40" height="40" viewBox="0 0 24 24">
+          <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" fill="rgba(255,255,255,0.9)" stroke="none"/>
+        </svg>
+
+        <svg class="hero-shape hero-shape--star2 float float-delay-2" width="24" height="24" viewBox="0 0 24 24">
+          <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" fill="#FFB347" stroke="none"/>
+        </svg>
+
+        <svg class="hero-shape hero-shape--star3 float float-delay-3" width="18" height="18" viewBox="0 0 24 24">
+          <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" fill="rgba(255,255,255,0.7)" stroke="none"/>
+        </svg>
+
+        <!-- Pencil -->
+        <svg class="hero-shape hero-shape--pencil float float-delay-1" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.85)" stroke-width="1.5" stroke-linecap="round">
+          <path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"/>
+        </svg>
+
+        <!-- Book -->
+        <svg class="hero-shape hero-shape--book float float-delay-2" width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.85)" stroke-width="1.5" stroke-linecap="round">
+          <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/>
+          <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
+        </svg>
+
+        <!-- Heart -->
+        <svg class="hero-shape hero-shape--heart float float-delay-3" width="34" height="34" viewBox="0 0 24 24" fill="#FFB347" stroke="none">
+          <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+        </svg>
+
+        <!-- Paint palette -->
+        <svg class="hero-shape hero-shape--palette float float-delay-2" width="36" height="36" viewBox="0 0 24 24" fill="rgba(255,255,255,0.8)" stroke="none">
+          <path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z"/>
+          <circle cx="6.5" cy="11.5" r="1.5" fill="#90C4AE"/>
+          <circle cx="8.5" cy="7.5" r="1.5" fill="#90C4AE"/>
+          <circle cx="12" cy="6" r="1.5" fill="#90C4AE"/>
+          <circle cx="15.5" cy="7.5" r="1.5" fill="#90C4AE"/>
+        </svg>
+
+        <!-- Lightning bolt -->
+        <svg class="hero-shape hero-shape--bolt float float-delay-1" width="28" height="28" viewBox="0 0 24 24" fill="#FFB347" stroke="none">
+          <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+        </svg>
+
+        <!-- Small dots scattered -->
+        <div class="hero-dot hero-dot--1"></div>
+        <div class="hero-dot hero-dot--2"></div>
+        <div class="hero-dot hero-dot--3"></div>
+        <div class="hero-dot hero-dot--4"></div>
+        <div class="hero-dot hero-dot--5"></div>
+
+      </div>
+
+      <!-- Center content -->
+      <div class="hero-center">
+
+        <!-- Logo with breathing animation -->
+        <div class="hero-logo-wrap">
+          <img src="./happy_place.jpg"
+               alt="Happy Place"
+               class="hero-main-logo" />
+        </div>
+
+        <!-- Text below logo -->
+        <div class="hero-text">
+          <h1 class="hero-headline">
+            Κάθε παιδί έχει τη δική του δύναμη.
+          </h1>
+          <p class="hero-sub">
+            Εξειδικευμένη υποστήριξη σε ένα ζεστό και ασφαλές περιβάλλον.
+          </p>
+          <div class="hero-cta">
+            <a href="#contact" class="btn btn--white">Δωρεάν Αξιολόγηση</a>
+            <a href="/services" class="btn btn--outline-white">Οι Υπηρεσίες μας</a>
+          </div>
+        </div>
+
+      </div>
+
+
+    </section>
+
+    <!-- ==========================================
+         SCROLL NARRATIVE
+         ========================================== -->
+    <!-- SCROLL NARRATIVE -->
+    <section class="narrative">
+      <div class="narrative__panels">
+
+        <div class="narrative__panel" data-index="1">
+          <div class="container narrative__panel-inner">
+            <div class="narrative__text">
+              <span class="narrative__eyebrow">ΤΙ ΚΑΝΟΥΜΕ</span>
+              <h2 class="narrative__headline">
+                Εντοπίζουμε αυτό που κάνει κάθε παιδί μοναδικό.
+              </h2>
+              <p class="narrative__body">
+                Κάθε παιδί έχει τη δική του ταυτότητα.
+                Εμείς τη βρίσκουμε, την αναδεικνύουμε
+                και τη μετατρέπουμε σε δύναμη.
+              </p>
+              <a href="/services" class="narrative__link">
+                Οι υπηρεσίες μας →
+              </a>
+            </div>
+            <div class="narrative__number" aria-hidden="true">01</div>
+          </div>
+        </div>
+
+        <div class="narrative__panel" data-index="2">
+          <div class="container narrative__panel-inner narrative__panel-inner--reverse">
+            <div class="narrative__text">
+              <span class="narrative__eyebrow">ΠΩΣ ΔΟΥΛΕΥΟΥΜΕ</span>
+              <h2 class="narrative__headline">
+                Δημιουργούμε εξατομικευμένα προγράμματα με αγάπη.
+              </h2>
+              <p class="narrative__body">
+                Δεν υπάρχει ένα πρόγραμμα για όλους.
+                Κάθε παιδί παίρνει αυτό που χρειάζεται —
+                όχι αυτό που είναι πιο εύκολο.
+              </p>
+              <a href="/services" class="narrative__link">
+                Πώς λειτουργούμε →
+              </a>
+            </div>
+            <div class="narrative__number" aria-hidden="true">02</div>
+          </div>
+        </div>
+
+        <div class="narrative__panel" data-index="3">
+          <div class="container narrative__panel-inner">
+            <div class="narrative__text">
+              <span class="narrative__eyebrow">ΤΟ ΑΠΟΤΕΛΕΣΜΑ</span>
+              <h2 class="narrative__headline">
+                Παιδιά που ανθίζουν. Οικογένειες που χαμογελούν.
+              </h2>
+              <p class="narrative__body">
+                Το αποτέλεσμα δεν είναι ένας βαθμός.
+                Είναι ένα παιδί που πάει στο Happy Place
+                με χαρά κάθε μέρα.
+              </p>
+              <a href="/contact" class="narrative__link">
+                Δωρεάν Αξιολόγηση →
+              </a>
+            </div>
+            <div class="narrative__number" aria-hidden="true">03</div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================
+         SECTION B: STATS
+         ========================================== -->
+    <section id="stats" class="stats" aria-label="Αριθμοί σε αριθμούς">
+      <div class="container stats__grid">
+
+        <div class="stats__item">
+          <span class="stats__number" data-target="10" data-suffix="+">10+</span>
+          <span class="stats__label">Χρόνια Εμπειρίας</span>
+        </div>
+
+        <div class="stats__item">
+          <span class="stats__number" data-target="500" data-suffix="+">500+</span>
+          <span class="stats__label">Παιδιά που Βοηθήσαμε</span>
+        </div>
+
+        <div class="stats__item">
+          <span class="stats__number" data-target="5" data-suffix="">5</span>
+          <span class="stats__label">Εξειδικευμένες Υπηρεσίες</span>
+        </div>
+
+        <div class="stats__item">
+          <span class="stats__number" data-target="100" data-suffix="%">100%</span>
+          <span class="stats__label">Πιστοποιημένο Κέντρο</span>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================
+         SECTION: ΥΠΗΡΕΣΙΕΣ
+         ========================================== -->
+    <section id="services" class="section services">
+      <div class="container">
+
+        <!-- Header -->
+        <div class="services__header">
+          <span class="section-eyebrow">ΤΙ ΠΡΟΣΦΕΡΟΥΜΕ</span>
+          <h2 class="section-headline">Εξειδικευμένη υποστήριξη για κάθε ανάγκη.</h2>
+          <p class="section-intro">Σχεδιάζουμε εξατομικευμένα προγράμματα που ανταποκρίνονται στις μοναδικές ανάγκες κάθε παιδιού.</p>
+        </div>
+
+        <!-- Cards grid -->
+        <div class="services__grid">
+
+          <!-- Card 1 -->
+          <article class="service-card">
+            <div class="service-card__icon" aria-hidden="true">
+              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#90C4AE" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/>
+                <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
+                <line x1="9" y1="7" x2="15" y2="7"/><line x1="9" y1="11" x2="12" y2="11"/>
+              </svg>
+            </div>
+            <h3 class="service-card__title">Ειδική Διαπαιδαγώγηση</h3>
+            <p class="service-card__desc">Εξειδικευμένες συνεδρίες για αναπτυξιακές δυσκολίες: ΔΕΠ-Υ, ΔΑΦ, διαταραχές λόγου και συμπεριφοράς.</p>
+            <div class="service-card__footer">
+              <span class="service-card__tag">Συνεδρίες</span>
+              <a href="/services" class="service-card__link">Μάθετε περισσότερα →</a>
+            </div>
+          </article>
+
+          <!-- Card 2 -->
+          <article class="service-card">
+            <div class="service-card__icon" aria-hidden="true">
+              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#90C4AE" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 20h9"/>
+                <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/>
+              </svg>
+            </div>
+            <h3 class="service-card__title">Καθημερινή Μελέτη</h3>
+            <p class="service-card__desc">Οργανωμένη μελέτη για παιδιά Δημοτικού & Γυμνασίου με εξατομικευμένη καθοδήγηση.</p>
+            <div class="service-card__footer">
+              <span class="service-card__tag">Δημοτικό & Γυμνάσιο</span>
+              <a href="/services" class="service-card__link">Μάθετε περισσότερα →</a>
+            </div>
+          </article>
+
+          <!-- Card 3 -->
+          <article class="service-card">
+            <div class="service-card__icon" aria-hidden="true">
+              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#90C4AE" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+              </svg>
+            </div>
+            <h3 class="service-card__title">Συμβουλευτική Ψυχολογία</h3>
+            <p class="service-card__desc">Συνεδρίες για παιδιά, εφήβους και γονείς. Υποστήριξη σε κάθε βήμα της ανάπτυξης.</p>
+            <div class="service-card__footer">
+              <span class="service-card__tag">Παιδιά & Γονείς</span>
+              <a href="/services" class="service-card__link">Μάθετε περισσότερα →</a>
+            </div>
+          </article>
+
+          <!-- Card 4 -->
+          <article class="service-card">
+            <div class="service-card__icon" aria-hidden="true">
+              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#90C4AE" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"/>
+                <circle cx="12" cy="12" r="6"/>
+                <circle cx="12" cy="12" r="2"/>
+              </svg>
+            </div>
+            <h3 class="service-card__title">Επαγγελματικός Προσανατολισμός</h3>
+            <p class="service-card__desc">Βοηθάμε εφήβους να ανακαλύψουν τα ταλέντα τους και να χαράξουν το μονοπάτι τους.</p>
+            <div class="service-card__footer">
+              <span class="service-card__tag">Έφηβοι</span>
+              <a href="/services" class="service-card__link">Μάθετε περισσότερα →</a>
+            </div>
+          </article>
+
+          <!-- Card 5 -->
+          <article class="service-card">
+            <div class="service-card__icon" aria-hidden="true">
+              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#90C4AE" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="13.5" cy="6.5"  r="1.5" fill="#90C4AE" stroke="none"/>
+                <circle cx="17.5" cy="10.5" r="1.5" fill="#90C4AE" stroke="none"/>
+                <circle cx="8.5"  cy="7.5"  r="1.5" fill="#90C4AE" stroke="none"/>
+                <circle cx="6.5"  cy="12.5" r="1.5" fill="#90C4AE" stroke="none"/>
+                <path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z"/>
+              </svg>
+            </div>
+            <h3 class="service-card__title">Δημιουργική Απασχόληση</h3>
+            <p class="service-card__desc">Δημιουργικές δραστηριότητες για παιδιά 4–12 ετών που ενισχύουν τη φαντασία και την αυτοέκφραση.</p>
+            <div class="service-card__footer">
+              <span class="service-card__tag">4–12 ετών</span>
+              <a href="/services" class="service-card__link">Μάθετε περισσότερα →</a>
+            </div>
+          </article>
+
+        </div><!-- /.services__grid -->
+
+        <!-- Section footer CTA -->
+        <div class="services__footer">
+          <a href="/services" class="btn btn--primary">Δείτε όλες τις υπηρεσίες μας</a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================
+         SECTION: ΠΩΣ ΛΕΙΤΟΥΡΓΕΙ
+         ========================================== -->
+    <section id="how-it-works" class="section how-it-works">
+      <div class="container">
+
+        <div class="how-it-works__header">
+          <span class="section-eyebrow">Η ΔΙΑΔΙΚΑΣΙΑ</span>
+          <h2 class="section-headline">Τρία απλά βήματα για να ξεκινήσετε.</h2>
+          <p class="section-intro">Από την πρώτη επικοινωνία μέχρι το εξατομικευμένο πρόγραμμα — είμαστε δίπλα σας σε κάθε βήμα.</p>
+        </div>
+
+        <div class="steps__wrapper">
+          <div class="steps__connector" aria-hidden="true">
+            <div class="steps__connector-line"></div>
+          </div>
+
+          <div class="steps__grid">
+
+            <div class="step-item">
+              <div class="step__number" aria-hidden="true">01</div>
+              <div class="step__icon" aria-hidden="true">📞</div>
+              <h3 class="step__title">Επικοινωνήστε μαζί μας</h3>
+              <p class="step__desc">Καλέστε μας ή συμπληρώστε τη φόρμα επικοινωνίας. Είμαστε εδώ για κάθε απορία σας.</p>
+            </div>
+
+            <div class="step-item">
+              <div class="step__number" aria-hidden="true">02</div>
+              <div class="step__icon" aria-hidden="true">🔍</div>
+              <h3 class="step__title">Δωρεάν Αξιολόγηση</h3>
+              <p class="step__desc">Πραγματοποιούμε δωρεάν αξιολόγηση για να κατανοήσουμε τις ανάγκες και τις δυνατότητες του παιδιού σας.</p>
+              <span class="step__badge">ΔΩΡΕΑΝ</span>
+            </div>
+
+            <div class="step-item">
+              <div class="step__number" aria-hidden="true">03</div>
+              <div class="step__icon" aria-hidden="true">🌱</div>
+              <h3 class="step__title">Ξεκινάμε Μαζί</h3>
+              <p class="step__desc">Σχεδιάζουμε εξατομικευμένο πρόγραμμα και αρχίζουμε το ταξίδι ανάπτυξης του παιδιού σας.</p>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================
+         SECTION: ΔΥΣΚΟΛΙΕΣ ΠΟΥ ΑΝΤΙΜΕΤΩΠΙΖΟΥΜΕ
+         ========================================== -->
+    <section id="difficulties" class="section difficulties">
+      <div class="container">
+
+        <div class="difficulties__header">
+          <span class="section-eyebrow">ΕΞΕΙΔΙΚΕΥΣΗ</span>
+          <h2 class="section-headline">Είμαστε εδώ για κάθε πρόκληση.</h2>
+          <p class="section-intro">Με επιστημονική κατάρτιση και εμπειρία, υποστηρίζουμε παιδιά με:</p>
+        </div>
+
+        <div class="difficulties__grid">
+
+          <div class="difficulties__col">
+            <h3 class="difficulties__subtitle">Αναπτυξιακές Δυσκολίες</h3>
+            <div class="pills">
+              <span class="pill">ΔΕΠ-Υ</span>
+              <span class="pill">ΔΑΦ</span>
+              <span class="pill">Νοητική Αναπηρία</span>
+              <span class="pill">Διαταραχές Λόγου</span>
+              <span class="pill">Κινητικός Συντονισμός</span>
+              <span class="pill">Διαταραχές Συμπεριφοράς</span>
+            </div>
+          </div>
+
+          <div class="difficulties__col">
+            <h3 class="difficulties__subtitle">Μαθησιακές Δυσκολίες</h3>
+            <div class="pills">
+              <span class="pill">Δυσλεξία</span>
+              <span class="pill">Δυσαριθμησία</span>
+              <span class="pill">Δυσγραφία</span>
+              <span class="pill">Δυσορθογραφία</span>
+              <span class="pill">Μνήμη & Οργάνωση</span>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="difficulties__footer">
+          <p class="difficulties__footer-text">Δεν βλέπετε αυτό που ψάχνετε;</p>
+          <a href="/contact" class="difficulties__footer-link">Επικοινωνήστε μαζί μας →</a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================
+         SECTION: ΜΑΡΤΥΡΙΕΣ ΓΟΝΕΩΝ
+         ========================================== -->
+    <section id="testimonials" class="section testimonials">
+      <div class="container">
+
+        <div class="testimonials__header">
+          <span class="section-eyebrow">ΤΙ ΛΕΝΕ ΟΙ ΓΟΝΕΙΣ</span>
+          <h2 class="section-headline">Οικογένειες που μας εμπιστεύτηκαν.</h2>
+          <p class="section-intro">Η μεγαλύτερη μας ικανοποίηση είναι να βλέπουμε κάθε παιδί να ανθίζει.</p>
+        </div>
+
+        <div class="testimonials__grid">
+
+          <article class="testimonial-card">
+            <div class="testimonial-card__stars" aria-label="5 αστέρια">⭐⭐⭐⭐⭐</div>
+            <blockquote class="testimonial-card__quote">Το Happy Place άλλαξε τη ζωή του παιδιού μας. Η Βίβιαν είναι εξαιρετική επαγγελματίας με πραγματική αγάπη για κάθε παιδί.</blockquote>
+            <div class="testimonial-card__author">
+              <div class="testimonial-avatar" style="background:#90C4AE" aria-hidden="true">Μ</div>
+              <div class="testimonial-card__meta">
+                <span class="testimonial-card__name">Μαρία Κ.</span>
+                <span class="testimonial-card__label">Μητέρα παιδιού 8 ετών</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="testimonial-card">
+            <div class="testimonial-card__stars" aria-label="5 αστέρια">⭐⭐⭐⭐⭐</div>
+            <blockquote class="testimonial-card__quote">Σε λίγους μήνες είδαμε τεράστια πρόοδο στη μελέτη και την αυτοπεποίθηση του γιου μας. Συστήνουμε ανεπιφύλακτα!</blockquote>
+            <div class="testimonial-card__author">
+              <div class="testimonial-avatar" style="background:#FFB347" aria-hidden="true">Ν</div>
+              <div class="testimonial-card__meta">
+                <span class="testimonial-card__name">Νίκος Π.</span>
+                <span class="testimonial-card__label">Πατέρας παιδιού 10 ετών</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="testimonial-card">
+            <div class="testimonial-card__stars" aria-label="5 αστέρια">⭐⭐⭐⭐⭐</div>
+            <blockquote class="testimonial-card__quote">Ένας χώρος γεμάτος αγάπη και επιστημονική γνώση. Η κόρη μας ανυπομονεί να πάει κάθε μέρα!</blockquote>
+            <div class="testimonial-card__author">
+              <div class="testimonial-avatar" style="background:#90C4AE" aria-hidden="true">Ε</div>
+              <div class="testimonial-card__meta">
+                <span class="testimonial-card__name">Ελένη Σ.</span>
+                <span class="testimonial-card__label">Μητέρα παιδιού 6 ετών</span>
+              </div>
+            </div>
+          </article>
+
+        </div>
+
+      </div>
+    </section>
+
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer" id="contact">
+    <div class="container">
+
+      <!-- Top: CTA text left, links right -->
+      <div class="footer__top">
+        <div class="footer__left">
+          <p class="footer__pre">Επικοινωνήστε μαζί μας</p>
+          <h2 class="footer__headline">Ελάτε σε<br>επαφή.</h2>
+          <a href="/contact" class="footer__cta">
+            Κλείστε ραντεβού <span>→</span>
+          </a>
+        </div>
+        <div class="footer__right">
+          <div class="footer__col">
+            <p class="footer__col-title">Σελίδες</p>
+            <ul>
+              <li><a href="/" class="footer__link">Αρχική</a></li>
+              <li><a href="/services" class="footer__link">Υπηρεσίες</a></li>
+              <li><a href="/blog" class="footer__link">Blog</a></li>
+              <li><a href="/contact" class="footer__link">Επικοινωνία</a></li>
+            </ul>
+          </div>
+          <div class="footer__col">
+            <p class="footer__col-title">Επικοινωνία</p>
+            <ul>
+              <li><a href="tel:6943449049" class="footer__link">694 344 9049</a></li>
+              <li><a href="tel:2892300539" class="footer__link">2892 300 539</a></li>
+              <li><a href="mailto:happyplacemoires@gmail.com"
+                  class="footer__link">happyplacemoires@gmail.com</a></li>
+              <li><span class="footer__link footer__link--muted">
+                  Μάχης Κρήτης 109, Μοίρες</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bottom bar -->
+      <div class="footer__bottom">
+        <p class="footer__copy">© 2026 Happy Place.</p>
+        <a href="https://cerebro.gr" class="footer__powered"
+           target="_blank" rel="noopener">
+          Powered by: Cerebro Software
+        </a>
+      </div>
+
+    </div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>
