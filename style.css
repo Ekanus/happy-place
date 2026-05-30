@@ -63,27 +63,6 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 1.2;
 }
 
-/* --- GSAP HIDDEN STATE --- */
-.nav,
-.hero-logo-wrap, .hero-headline, .hero-sub, .hero-cta,
-.section-eyebrow, .section-headline, .section-intro,
-.service-card, .step-item,
-.testimonial-card, .contact-form,
-.difficulties__col, .pill,
-.page-hero__title,
-.service-detail__image,
-.service-detail__title,
-.service-detail__body,
-.service-detail__list-item,
-.services-cta-banner__title,
-.services-cta-banner__body,
-.contact-page-form__wrap,
-.contact-info-card,
-.faq-item,
-.blog-card,
-.newsletter-section__inner {
-  opacity: 0;
-}
 
 /* =============================================
    ANNOUNCEMENT BANNER
@@ -989,7 +968,6 @@ h1, h2, h3, h4, h5, h6 {
   text-transform: uppercase;
   color: #90C4AE;
   margin-bottom: 1.25rem;
-  opacity: 0;
 }
 
 .narrative__headline {
@@ -1000,7 +978,6 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 1.08;
   letter-spacing: -0.025em;
   margin-bottom: 1.5rem;
-  opacity: 0;
 }
 
 .narrative__body {
@@ -1009,7 +986,6 @@ h1, h2, h3, h4, h5, h6 {
   color: #718096;
   margin-bottom: 2rem;
   max-width: 460px;
-  opacity: 0;
 }
 
 .narrative__link {
@@ -1023,7 +999,6 @@ h1, h2, h3, h4, h5, h6 {
   border-bottom: 2px solid #90C4AE;
   padding-bottom: 2px;
   transition: color 0.2s, gap 0.2s;
-  opacity: 0;
 }
 .narrative__link:hover {
   color: #90C4AE;
