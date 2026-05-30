@@ -144,45 +144,11 @@ function initMobileMenu() {
 function initHero() {
   if (!document.querySelector('.hero')) return;
 
-  const tl = gsap.timeline();
-
-  // Logo breathes in first
-  tl.fromTo('.hero-logo-wrap',
-    { opacity: 0, scale: 0.8 },
-    { opacity: 1, scale: 1, duration: 1, ease: 'back.out(1.4)' },
-    0.2
-  )
-  // Headline
-  .fromTo('.hero-headline',
-    { opacity: 0, y: 30 },
-    { opacity: 1, y: 0, duration: 0.7, ease: 'power3.out' },
-    0.8
-  )
-  // Subtitle
-  .fromTo('.hero-sub',
-    { opacity: 0, y: 20 },
-    { opacity: 1, y: 0, duration: 0.6, ease: 'power3.out' },
-    1.0
-  )
-  // CTAs
-  .fromTo('.hero-cta',
-    { opacity: 0, y: 20 },
-    { opacity: 1, y: 0, duration: 0.6, ease: 'power3.out' },
-    1.2
-  );
-
-  // Floating shapes staggered
-  gsap.fromTo('.hero-shape, .hero-dot',
-    { opacity: 0, scale: 0.5 },
-    {
-      opacity: 1,
-      scale: 1,
-      duration: 0.6,
-      ease: 'back.out(1.5)',
-      stagger: 0.08,
-      delay: 0.5
-    }
-  );
+  gsap.from('.hero-logo-wrap', { opacity: 0, scale: 0.9, duration: 1, ease: 'power3.out', delay: 0.2 });
+  gsap.from('.hero-headline',  { opacity: 0, y: 30, duration: 0.7, ease: 'power3.out', delay: 0.7 });
+  gsap.from('.hero-sub',       { opacity: 0, y: 20, duration: 0.6, ease: 'power3.out', delay: 0.9 });
+  gsap.from('.hero-cta',       { opacity: 0, y: 20, duration: 0.6, ease: 'power3.out', delay: 1.1 });
+  gsap.from('.hero-shape, .hero-dot', { opacity: 0, scale: 0.5, duration: 0.6, ease: 'back.out(1.5)', stagger: 0.08, delay: 0.5 });
 }
 
 /* =============================================
