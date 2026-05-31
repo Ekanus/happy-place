@@ -165,30 +165,27 @@
     <!-- SCROLL NARRATIVE -->
     <section class="narrative">
       <svg class="narrative-line"
-           viewBox="0 0 100 800"
-           preserveAspectRatio="none"
            xmlns="http://www.w3.org/2000/svg"
+           viewBox="0 0 300 2400"
            aria-hidden="true">
         <defs>
-          <linearGradient id="lineGradient"
-                          x1="0%" y1="0%"
-                          x2="0%" y2="100%">
+          <linearGradient id="pencilGrad" x1="0%" y1="0%" x2="0%" y2="100%">
             <stop offset="0%"   stop-color="#90C4AE"/>
-            <stop offset="33%"  stop-color="#91A7C5"/>
-            <stop offset="66%"  stop-color="#C591A7"/>
+            <stop offset="30%"  stop-color="#91A7C5"/>
+            <stop offset="65%"  stop-color="#C591A7"/>
             <stop offset="100%" stop-color="#C5AF91"/>
           </linearGradient>
         </defs>
-        <path id="narrative-path"
-          d="M 50,0
-             C 80,50  20,100  50,150
-             C 80,200 20,250  50,300
-             C 20,350 80,400  50,450
-             C 20,500 80,550  50,600
-             C 80,650 20,700  50,750
-             C 20,780 60,800  50,800"
+        <path id="pencil-path"
+          d="M 150,0
+             C 230,150 70,280 150,420
+             C 230,560 70,700 150,840
+             C 70,980 230,1120 150,1260
+             C 70,1400 230,1540 150,1680
+             C 230,1820 70,1960 150,2100
+             C 70,2240 180,2350 150,2400"
           fill="none"
-          stroke="url(#lineGradient)"
+          stroke="url(#pencilGrad)"
           stroke-width="6"
           stroke-linecap="round"
           stroke-linejoin="round"/>
