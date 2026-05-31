@@ -215,7 +215,24 @@ function initServices() {
   reveal('.services .section-eyebrow');
   reveal('.services .section-headline', { y: 40 });
   reveal('.services .section-intro', { trigger: '.services__header' });
-  reveal('.service-card', { stagger: 0.12 });
+
+  gsap.fromTo('.service-card',
+    { opacity: 0, y: 80, scale: 0.95, rotateX: 4 },
+    {
+      opacity: 1,
+      y: 0,
+      scale: 1,
+      rotateX: 0,
+      duration: 0.7,
+      ease: 'power3.out',
+      stagger: 0.15,
+      scrollTrigger: {
+        trigger: '.services__grid',
+        start: 'top 85%',
+        toggleActions: 'play none none none',
+      }
+    }
+  );
 }
 
 /* =============================================
