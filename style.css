@@ -413,7 +413,7 @@ h1, h2, h3, h4, h5, h6 {
 .services {
   position: relative;
   z-index: 4;
-  background: #F0F4FA;
+  background: #DCE6F0;
   border-radius: 32px 32px 0 0;
   margin-top: -32px;
   padding: 7rem 0;
@@ -423,7 +423,7 @@ h1, h2, h3, h4, h5, h6 {
 .how-it-works {
   position: relative;
   z-index: 5;
-  background: #FAF0F6;
+  background: #F0DCE6;
   border-radius: 32px 32px 0 0;
   margin-top: -32px;
   padding: 7rem 0;
@@ -433,7 +433,7 @@ h1, h2, h3, h4, h5, h6 {
 .difficulties {
   position: relative;
   z-index: 6;
-  background: #FAF7F0;
+  background: #F0E8DC;
   border-radius: 32px 32px 0 0;
   margin-top: -32px;
   padding: 7rem 0;
@@ -443,7 +443,7 @@ h1, h2, h3, h4, h5, h6 {
 .testimonials {
   position: relative;
   z-index: 7;
-  background: #F0F4FA;
+  background: #DCE6F0;
   border-radius: 32px 32px 0 0;
   margin-top: -32px;
   padding: 7rem 0 8rem;
