@@ -1043,6 +1043,20 @@ main {
   order: 1;
 }
 
+.narrative__shapes {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+.narrative__icon {
+  position: absolute;
+}
+.narrative__text {
+  position: relative;
+  z-index: 1;
+}
+
 /* TEXT */
 .narrative__text {
   max-width: 560px;
