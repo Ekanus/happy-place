@@ -594,9 +594,9 @@ h1, h2, h3, h4, h5, h6 {
 
 .footer__headline {
   font-family: var(--ff-heading);
-  font-size: clamp(3rem, 5vw, 5rem);
-  max-width: none;
-  white-space: nowrap;
+  font-size: clamp(2.8rem, 4vw, 4rem);
+  max-width: 380px;
+  white-space: normal;
   font-weight: 900;
   color: #2D3748;
   line-height: 1.0;
