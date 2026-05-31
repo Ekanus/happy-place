@@ -537,19 +537,20 @@ function initPencilLine() {
   const path = document.getElementById('pencil-path');
   if (!path) return;
 
-  // Use a fixed large length - avoids getTotalLength() issues
-  const length = 3000;
-  path.style.strokeDasharray = length;
-  path.style.strokeDashoffset = length;
+  const length = path.getTotalLength();
+
+  gsap.set(path, {
+    attr: { 'stroke-dasharray': length, 'stroke-dashoffset': length }
+  });
 
   gsap.to(path, {
-    strokeDashoffset: 0,
+    attr: { 'stroke-dashoffset': 0 },
     ease: 'none',
     scrollTrigger: {
       trigger: '.narrative',
-      start: 'top 85%',
-      end: 'bottom 15%',
-      scrub: 1,
+      start: 'top 80%',
+      end: 'bottom 20%',
+      scrub: true,
     }
   });
 }
