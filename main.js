@@ -560,16 +560,19 @@ function initStackedSections() {
 function initPencilLine() {
   const path = document.getElementById('pencil-path');
   if (!path) return;
-  const length = path.getTotalLength();
+
+  // Use a fixed large length - avoids getTotalLength() issues
+  const length = 3000;
   path.style.strokeDasharray = length;
   path.style.strokeDashoffset = length;
+
   gsap.to(path, {
     strokeDashoffset: 0,
     ease: 'none',
     scrollTrigger: {
       trigger: '.narrative',
-      start: 'top 80%',
-      end: 'bottom 20%',
+      start: 'top 85%',
+      end: 'bottom 15%',
       scrub: 1,
     }
   });
