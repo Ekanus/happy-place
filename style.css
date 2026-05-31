@@ -594,7 +594,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .footer__headline {
   font-family: var(--ff-heading);
-  font-size: clamp(2.5rem, 4vw, 3.5rem);
+  font-size: 2.4rem;
   max-width: 380px;
   white-space: normal;
   font-weight: 900;
