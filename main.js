@@ -555,6 +555,27 @@ function initStackedSections() {
 }
 
 /* =============================================
+   PENCIL LINE ANIMATION
+   ============================================= */
+function initPencilLine() {
+  const path = document.getElementById('pencil-path');
+  if (!path) return;
+  const length = path.getTotalLength();
+  path.style.strokeDasharray = length;
+  path.style.strokeDashoffset = length;
+  gsap.to(path, {
+    strokeDashoffset: 0,
+    ease: 'none',
+    scrollTrigger: {
+      trigger: '.narrative',
+      start: 'top 80%',
+      end: 'bottom 20%',
+      scrub: 1,
+    }
+  });
+}
+
+/* =============================================
    INIT
    ============================================= */
 document.addEventListener('DOMContentLoaded', () => {
@@ -566,6 +587,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initHero();
   initNarrativeLine();
   initNarrative();
+  initPencilLine();
   initStats();
   initServices();
   initHowItWorks();
