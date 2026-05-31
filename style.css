@@ -1052,6 +1052,11 @@ main {
 .narrative__icon {
   position: absolute;
 }
+.narrative__dot {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+}
 .narrative__text {
   position: relative;
   z-index: 1;
