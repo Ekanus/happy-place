@@ -963,8 +963,8 @@ main {
 }
 
 /* Alternating backgrounds */
-.narrative__panel:nth-child(odd)  { background: #ffffff; }
-.narrative__panel:nth-child(even) { background: #F7FBFA; }
+.narrative__panel:nth-child(odd)  { background: transparent; }
+.narrative__panel:nth-child(even) { background: transparent; }
 
 .narrative__panel-inner {
   display: grid;

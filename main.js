@@ -151,30 +151,6 @@ function initHero() {
   gsap.from('.hero-shape, .hero-dot', { opacity: 0, scale: 0.5, duration: 0.6, ease: 'back.out(1.5)', stagger: 0.08, delay: 0.5 });
 }
 
-/* =============================================
-   NARRATIVE LINE DRAW ANIMATION
-   ============================================= */
-function initNarrativeLine() {
-  const path = document.getElementById('narrative-path');
-  if (!path) return;
-
-  // Use a fixed large length instead of getTotalLength()
-  const length = 2000;
-
-  path.style.strokeDasharray = length;
-  path.style.strokeDashoffset = length;
-
-  gsap.to(path, {
-    strokeDashoffset: 0,
-    ease: 'none',
-    scrollTrigger: {
-      trigger: '.narrative',
-      start: 'top 80%',
-      end: 'bottom 20%',
-      scrub: true,
-    }
-  });
-}
 
 /* =============================================
    NARRATIVE SECTION ANIMATIONS
@@ -588,7 +564,6 @@ document.addEventListener('DOMContentLoaded', () => {
   initMobileMenu();
   initActiveNav();
   initHero();
-  initNarrativeLine();
   initNarrative();
   initPencilLine();
   initStats();
