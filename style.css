@@ -992,15 +992,17 @@ main {
 /* ANIMATED UNDERLINE */
 .narrative__headline {
   position: relative;
-  display: inline;
+  display: block;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.5rem;
 }
 .narrative__headline::after {
   content: '';
   position: absolute;
-  bottom: -4px;
+  bottom: -12px;
   left: 0;
   width: 100%;
-  height: 4px;
+  height: 3px;
   border-radius: 2px;
   transform: scaleX(0);
   transform-origin: left;
