@@ -549,7 +549,7 @@ function initPencilLine() {
     scrollTrigger: {
       trigger: '.narrative',
       start: 'top 95%',
-      end: 'bottom 60%',
+      end: '70% top',
       scrub: true,
     }
   });
