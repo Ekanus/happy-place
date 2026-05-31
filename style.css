@@ -580,7 +580,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .footer__left {
   flex: 1;
-  max-width: 600px;
+  max-width: 520px;
 }
 
 .footer__pre {
@@ -594,12 +594,12 @@ h1, h2, h3, h4, h5, h6 {
 
 .footer__headline {
   font-family: var(--ff-heading);
-  font-size: clamp(2.8rem, 4vw, 4rem);
+  font-size: clamp(2.5rem, 4vw, 3.5rem);
   max-width: 380px;
   white-space: normal;
   font-weight: 900;
   color: #2D3748;
-  line-height: 1.4;
+  line-height: 1.25;
   letter-spacing: -0.03em;
   margin-bottom: 2rem;
 }
