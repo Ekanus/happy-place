@@ -1348,8 +1348,10 @@ main {
   top: 32px;
   left: calc(16.666% + 32px);
   right: calc(16.666% + 32px);
-  height: 0;
-  border-top: 2px dashed rgba(144,196,174,0.45);
+  height: 3px;
+  background: linear-gradient(to right, #90C4AE, #91A7C5, #C591A7);
+  border: none;
+  border-radius: 2px;
   transform: scaleX(0);
   transform-origin: left center;
 }
@@ -1366,7 +1368,7 @@ main {
   width: 64px;
   height: 64px;
   border-radius: 50%;
-  background: var(--c-primary);
+  background: #90C4AE;
   color: #fff;
   font-family: var(--ff-heading);
   font-size: 1.4rem;
@@ -1377,6 +1379,10 @@ main {
   flex-shrink: 0;
   box-shadow: 0 6px 20px rgba(144,196,174,0.3);
 }
+
+.step-item:nth-child(1) .step__number { background: #90C4AE; box-shadow: 0 6px 20px rgba(144,196,174,0.3); }
+.step-item:nth-child(2) .step__number { background: #91A7C5; box-shadow: 0 6px 20px rgba(145,167,197,0.3); }
+.step-item:nth-child(3) .step__number { background: #C591A7; box-shadow: 0 6px 20px rgba(197,145,167,0.3); }
 
 .step__icon {
   font-size: 2rem;

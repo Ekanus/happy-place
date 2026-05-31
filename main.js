@@ -269,28 +269,41 @@ function initHowItWorks() {
   reveal('.how-it-works .section-eyebrow');
   reveal('.how-it-works .section-headline', { y: 40 });
   reveal('.how-it-works .section-intro', { trigger: '.how-it-works__header' });
-  reveal('.step-item', { stagger: 0.18 });
 
-  gsap.fromTo('.step__number',
-    { scale: 0 },
-    {
-      scale: 1,
-      duration: 0.6,
-      ease: 'back.out(1.7)',
-      stagger: 0.18,
-      scrollTrigger: { trigger: '.steps__grid', start: 'top 92%' },
+  // Connector line draws on scroll
+  gsap.to('.steps__connector-line', {
+    scaleX: 1,
+    duration: 1.5,
+    ease: 'power2.out',
+    scrollTrigger: {
+      trigger: '.steps__grid',
+      start: 'top 80%',
+      end: 'top 40%',
+      scrub: true,
     }
-  );
+  });
 
-  gsap.fromTo('.steps__connector-line',
-    { scaleX: 0 },
-    {
-      scaleX: 1,
-      duration: 1.2,
-      ease: 'power2.out',
-      scrollTrigger: { trigger: '.steps__grid', start: 'top 92%' },
-    }
-  );
+  // Steps appear sequentially with bounce
+  document.querySelectorAll('.step-item').forEach((step, i) => {
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: '.steps__grid',
+        start: 'top 80%',
+        toggleActions: 'play none none none',
+      }
+    });
+
+    tl.fromTo(step.querySelector('.step__number'),
+      { scale: 0, rotation: -20 },
+      { scale: 1, rotation: 0, duration: 0.5, ease: 'back.out(2)', delay: i * 0.3 }
+    );
+
+    tl.fromTo(step,
+      { opacity: 0, y: 40 },
+      { opacity: 1, y: 0, duration: 0.6, ease: 'power3.out' },
+      '-=0.3'
+    );
+  });
 }
 
 /* =============================================
