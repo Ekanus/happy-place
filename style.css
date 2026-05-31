@@ -580,7 +580,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .footer__left {
   flex: 1;
-  max-width: 520px;
+  max-width: 600px;
 }
 
 .footer__pre {
