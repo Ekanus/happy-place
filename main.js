@@ -216,23 +216,24 @@ function initServices() {
   reveal('.services .section-headline', { y: 40 });
   reveal('.services .section-intro', { trigger: '.services__header' });
 
-  gsap.fromTo('.service-card',
-    { opacity: 0, y: 80, scale: 0.95, rotateX: 4 },
-    {
-      opacity: 1,
-      y: 0,
-      scale: 1,
-      rotateX: 0,
-      duration: 0.7,
-      ease: 'power3.out',
-      stagger: 0.15,
-      scrollTrigger: {
-        trigger: '.services__grid',
-        start: 'top 85%',
-        toggleActions: 'play none none none',
+  document.querySelectorAll('.service-card').forEach((card, i) => {
+    const fromLeft = i % 2 === 0;
+    gsap.fromTo(card,
+      { opacity: 0, x: fromLeft ? -60 : 60, rotateY: fromLeft ? 6 : -6 },
+      {
+        opacity: 1,
+        x: 0,
+        rotateY: 0,
+        duration: 0.8,
+        ease: 'power3.out',
+        scrollTrigger: {
+          trigger: card,
+          start: 'top 88%',
+          toggleActions: 'play none none none',
+        }
       }
-    }
-  );
+    );
+  });
 }
 
 /* =============================================

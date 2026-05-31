@@ -1234,6 +1234,12 @@ main {
   box-shadow: 0 20px 40px rgba(0,0,0,0.1);
 }
 
+.service-card:nth-child(1) { border-top: 4px solid #90C4AE; }
+.service-card:nth-child(2) { border-top: 4px solid #91A7C5; }
+.service-card:nth-child(3) { border-top: 4px solid #C591A7; }
+.service-card:nth-child(4) { border-top: 4px solid #C5AF91; }
+.service-card:nth-child(5) { border-top: 4px solid #90C4AE; }
+
 .service-card__icon {
   font-size: 2.5rem;
   margin-bottom: 1.25rem;
