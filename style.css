@@ -564,6 +564,7 @@ h1, h2, h3, h4, h5, h6 {
   background: #C8DED8;
   border-radius: 32px 32px 0 0;
   margin-top: -32px;
+  padding: 5rem 0 3rem;
   box-shadow: 0 -8px 40px rgba(0,0,0,0.06);
 }
 
@@ -572,7 +573,7 @@ h1, h2, h3, h4, h5, h6 {
   justify-content: space-between;
   align-items: flex-start;
   gap: 4rem;
-  padding-bottom: 4rem;
+  padding-bottom: 3rem;
   border-bottom: 1px solid rgba(45,55,72,0.12);
   margin-bottom: 2rem;
 }
@@ -583,17 +584,17 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .footer__pre {
-  font-size: 0.72rem;
-  font-weight: 700;
-  letter-spacing: 0.16em;
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
   text-transform: uppercase;
-  color: #5a8a7d;
+  color: var(--c-text);
+  opacity: 0.6;
   margin-bottom: 1rem;
 }
 
 .footer__headline {
   font-family: var(--ff-heading);
-  font-size: clamp(3rem, 6vw, 5.5rem);
+  font-size: clamp(3rem, 7vw, 6rem);
   font-weight: 900;
   color: #2D3748;
   line-height: 1.0;
@@ -609,8 +610,8 @@ h1, h2, h3, h4, h5, h6 {
   color: #2D3748;
   font-family: var(--ff-body);
   font-weight: 700;
-  font-size: 0.95rem;
-  padding: 0.9rem 1.8rem;
+  font-size: 1.1rem;
+  padding: 1rem 2rem;
   border-radius: 50px;
   text-decoration: none;
   box-shadow: 0 2px 12px rgba(0,0,0,0.08);
@@ -686,11 +687,10 @@ h1, h2, h3, h4, h5, h6 {
 .footer__powered:hover { color: #90C4AE; }
 
 @media (max-width: 768px) {
-  .footer { padding: 3rem 0 2rem; }
+  .footer { padding: 4rem 0 2.5rem; }
   .footer__top {
     flex-direction: column;
-    gap: 2rem;
-    padding-bottom: 2rem;
+    gap: 3rem;
   }
   .footer__right {
     flex-direction: row;
@@ -698,7 +698,7 @@ h1, h2, h3, h4, h5, h6 {
     flex-wrap: wrap;
   }
   .footer__headline {
-    font-size: clamp(2.2rem, 10vw, 3rem);
+    font-size: clamp(2.5rem, 10vw, 4rem);
   }
   .footer__bottom {
     flex-direction: column;
@@ -941,6 +941,7 @@ main {
 .narrative__panels {
   position: relative;
   z-index: 1;
+  overflow: hidden;
 }
 
 .narrative__panel {
@@ -949,6 +950,7 @@ main {
   align-items: center;
   padding: 8rem 0;
   position: relative;
+  overflow: hidden;
   border-bottom: 1px solid rgba(144,196,174,0.12);
 }
 
