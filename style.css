@@ -597,13 +597,13 @@ h1, h2, h3, h4, h5, h6 {
 /* Left: logo + headline + CTA */
 .footer__left {
   flex: 1;
-  max-width: 480px;
+  max-width: 580px;
 }
 
 .footer__logo {
-  width: 280px;
+  width: 360px;
   height: auto;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
   border-radius: 0;
   border: none;
   box-shadow: none;
@@ -720,7 +720,7 @@ h1, h2, h3, h4, h5, h6 {
     padding-bottom: 3rem;
   }
   .footer__left { max-width: 100%; }
-  .footer__logo { width: 200px; }
+  .footer__logo { width: 260px; }
   .footer__headline {
     font-size: clamp(2rem, 8vw, 2.8rem);
   }
