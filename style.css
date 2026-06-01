@@ -583,13 +583,13 @@ h1, h2, h3, h4, h5, h6 {
   z-index: 1;
   display: flex;
   justify-content: space-between;
-  align-items: flex-start;
+  align-items: center;
   gap: 3rem;
   padding-bottom: 3rem;
 }
 .footer__left {
   flex: 1;
-  max-width: 520px;
+  max-width: 600px;
 }
 .footer__logo {
   width: 340px;
@@ -659,6 +659,10 @@ h1, h2, h3, h4, h5, h6 {
   height: 70px;
   perspective: 600px;
   cursor: pointer;
+  transition: transform 0.15s ease;
+}
+.memory-card:hover:not(.is-flipped):not(.is-matched) {
+  transform: scale(1.06);
 }
 .memory-card__inner {
   position: relative;
@@ -681,15 +685,15 @@ h1, h2, h3, h4, h5, h6 {
   justify-content: center;
 }
 .memory-card__back {
-  background: #ffffff;
+  background: rgba(255,255,255,0.95);
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
 .memory-card__back::after {
-  content: '?';
+  content: '★';
   font-family: var(--ff-heading);
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   font-weight: 800;
-  color: #90C4AE;
+  color: #FFB347;
 }
 .memory-card__front {
   transform: rotateY(180deg);
