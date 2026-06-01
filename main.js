@@ -11,19 +11,22 @@ gsap.registerPlugin(ScrollTrigger);
 function reveal(targets, options = {}) {
   const els = document.querySelectorAll(targets);
   if (!els.length) return;
-  gsap.from(targets, {
-    opacity: 0,
-    y: options.y ?? 30,
-    duration: options.duration ?? 0.7,
-    ease: 'power3.out',
-    stagger: options.stagger ?? 0,
-    delay: options.delay ?? 0,
-    scrollTrigger: {
-      trigger: options.trigger ?? targets,
-      start: 'top 92%',
-      toggleActions: 'play none none none',
-    },
-  });
+  gsap.fromTo(targets,
+    { opacity: 0, y: options.y ?? 30 },
+    {
+      opacity: 1,
+      y: 0,
+      duration: options.duration ?? 0.7,
+      ease: 'power3.out',
+      stagger: options.stagger ?? 0,
+      delay: options.delay ?? 0,
+      scrollTrigger: {
+        trigger: options.trigger ?? targets,
+        start: 'top 92%',
+        toggleActions: 'play none none none',
+      },
+    }
+  );
 }
 
 /* =============================================
@@ -163,7 +166,6 @@ function initNarrative() {
     const headline = panel.querySelector('.narrative__headline');
     const body     = panel.querySelector('.narrative__body');
     const link     = panel.querySelector('.narrative__link');
-    const number   = panel.querySelector('.narrative__number');
 
     const tl = gsap.timeline({
       scrollTrigger: {
@@ -197,11 +199,6 @@ function initNarrative() {
       { opacity: 0, y: 20 },
       { opacity: 1, y: 0, duration: 0.5, ease: 'power3.out' },
       0.45
-    );
-    if (number)   tl.fromTo(number,
-      { opacity: 0, x: i % 2 === 0 ? 60 : -60, scale: 0.85 },
-      { opacity: 0.08, x: 0, scale: 1, duration: 1, ease: 'power3.out' },
-      0
     );
   });
 }
@@ -379,21 +376,6 @@ function initPageHero() {
     { opacity: 0, y: 35 },
     { opacity: 1, y: 0, duration: 0.7, ease: 'power3.out', delay: 0.5 }
   );
-}
-
-/* =============================================
-   COUNTER ANIMATION
-   ============================================= */
-function animateCounter(el, target) {
-  gsap.to({ val: 0 }, {
-    val: target,
-    duration: 2,
-    ease: 'power2.out',
-    scrollTrigger: { trigger: el, start: 'top 92%' },
-    onUpdate: function () {
-      el.textContent = Math.round(this.targets()[0].val) + '+';
-    },
-  });
 }
 
 /* =============================================
