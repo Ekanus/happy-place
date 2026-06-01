@@ -336,16 +336,36 @@ function initTestimonials() {
    FOOTER ANIMATIONS
    ============================================= */
 function initFooter() {
-  if (!document.querySelector('.footer__col')) return;
-  gsap.fromTo('.footer__left',
-    { opacity: 0, y: 40 },
-    { opacity: 1, y: 0, duration: 0.7, ease: 'power3.out',
-      scrollTrigger: { trigger: '.footer__top', start: 'top 92%' } }
+  if (!document.querySelector('.footer')) return;
+
+  gsap.fromTo('.footer__logo',
+    { opacity: 0, scale: 0.9 },
+    { opacity: 1, scale: 1, duration: 0.8, ease: 'power3.out',
+      scrollTrigger: { trigger: '.footer__top', start: 'top 90%' } }
   );
+
+  gsap.fromTo('.footer__headline',
+    { opacity: 0, y: 30 },
+    { opacity: 1, y: 0, duration: 0.7, ease: 'power3.out', delay: 0.15,
+      scrollTrigger: { trigger: '.footer__top', start: 'top 90%' } }
+  );
+
+  gsap.fromTo('.footer__cta',
+    { opacity: 0, y: 20 },
+    { opacity: 1, y: 0, duration: 0.6, ease: 'power3.out', delay: 0.3,
+      scrollTrigger: { trigger: '.footer__top', start: 'top 90%' } }
+  );
+
   gsap.fromTo('.footer__col',
     { opacity: 0, y: 30 },
-    { opacity: 1, y: 0, duration: 0.6, ease: 'power3.out', stagger: 0.1,
-      scrollTrigger: { trigger: '.footer__top', start: 'top 92%' } }
+    { opacity: 1, y: 0, duration: 0.6, ease: 'power3.out', stagger: 0.12,
+      scrollTrigger: { trigger: '.footer__top', start: 'top 88%' } }
+  );
+
+  gsap.fromTo('.footer__shape',
+    { opacity: 0, scale: 0 },
+    { opacity: 1, scale: 1, duration: 0.5, ease: 'back.out(2)', stagger: 0.1,
+      scrollTrigger: { trigger: '.footer', start: 'top 85%' } }
   );
 }
 
