@@ -341,27 +341,23 @@ function initFooter() {
   gsap.fromTo('.footer__logo',
     { opacity: 0, scale: 0.9 },
     { opacity: 1, scale: 1, duration: 0.8, ease: 'power3.out',
-      scrollTrigger: { trigger: '.footer__top', start: 'top 90%' } }
+      scrollTrigger: { trigger: '.footer__main', start: 'top 90%' } }
   );
-
   gsap.fromTo('.footer__headline',
     { opacity: 0, y: 30 },
     { opacity: 1, y: 0, duration: 0.7, ease: 'power3.out', delay: 0.15,
-      scrollTrigger: { trigger: '.footer__top', start: 'top 90%' } }
+      scrollTrigger: { trigger: '.footer__main', start: 'top 90%' } }
   );
-
   gsap.fromTo('.footer__cta',
     { opacity: 0, y: 20 },
     { opacity: 1, y: 0, duration: 0.6, ease: 'power3.out', delay: 0.3,
-      scrollTrigger: { trigger: '.footer__top', start: 'top 90%' } }
+      scrollTrigger: { trigger: '.footer__main', start: 'top 90%' } }
   );
-
-  gsap.fromTo('.footer__col',
+  gsap.fromTo('.footer__game',
     { opacity: 0, y: 30 },
-    { opacity: 1, y: 0, duration: 0.6, ease: 'power3.out', stagger: 0.12,
-      scrollTrigger: { trigger: '.footer__top', start: 'top 88%' } }
+    { opacity: 1, y: 0, duration: 0.7, ease: 'power3.out',
+      scrollTrigger: { trigger: '.footer__main', start: 'top 85%' } }
   );
-
   gsap.fromTo('.footer__shape',
     { opacity: 0, scale: 0 },
     { opacity: 1, scale: 1, duration: 0.5, ease: 'back.out(2)', stagger: 0.1,
@@ -609,6 +605,115 @@ function initPencilLine() {
 /* =============================================
    INIT
    ============================================= */
+/* =============================================
+   MEMORY GAME
+   ============================================= */
+function initMemoryGame() {
+  const grid = document.getElementById('memory-grid');
+  if (!grid) return;
+
+  const icons = [
+    { name: 'star', color: '#90C4AE', svg: '<polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>' },
+    { name: 'heart', color: '#C591A7', svg: '<path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>' },
+    { name: 'pencil', color: '#91A7C5', svg: '<path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>' },
+    { name: 'book', color: '#C5AF91', svg: '<path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>' },
+    { name: 'palette', color: '#FFB347', svg: '<path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z"/><circle cx="7" cy="12" r="1.5" fill="white"/><circle cx="9" cy="8" r="1.5" fill="white"/><circle cx="15" cy="8" r="1.5" fill="white"/>' },
+    { name: 'bolt', color: '#B8D8CC', svg: '<polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>' },
+  ];
+
+  let cards = [];
+  let flipped = [];
+  let matched = 0;
+  let moves = 0;
+  let locked = false;
+
+  function shuffle(arr) {
+    for (let i = arr.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [arr[i], arr[j]] = [arr[j], arr[i]];
+    }
+    return arr;
+  }
+
+  function createBoard() {
+    grid.innerHTML = '';
+    flipped = [];
+    matched = 0;
+    moves = 0;
+    locked = false;
+    document.getElementById('game-moves').textContent = '0 κινήσεις';
+    document.getElementById('game-win').style.display = 'none';
+
+    const pairs = [...icons, ...icons];
+    cards = shuffle(pairs);
+
+    cards.forEach(function(icon, i) {
+      var card = document.createElement('div');
+      card.className = 'memory-card';
+      card.dataset.name = icon.name;
+      card.dataset.index = i;
+
+      var isStroke = icon.name === 'pencil' || icon.name === 'book';
+
+      card.innerHTML =
+        '<div class="memory-card__inner">' +
+          '<div class="memory-card__back"></div>' +
+          '<div class="memory-card__front" style="background:' + icon.color + '">' +
+            '<svg viewBox="0 0 24 24" fill="' + (isStroke ? 'none' : '#ffffff') + '" style="color:#ffffff">' +
+              icon.svg +
+            '</svg>' +
+          '</div>' +
+        '</div>';
+
+      card.addEventListener('click', function() { flipCard(card); });
+      grid.appendChild(card);
+    });
+  }
+
+  function flipCard(card) {
+    if (locked) return;
+    if (card.classList.contains('is-flipped')) return;
+    if (card.classList.contains('is-matched')) return;
+
+    card.classList.add('is-flipped');
+    flipped.push(card);
+
+    if (flipped.length === 2) {
+      moves++;
+      var movesText = moves === 1 ? '1 κίνηση' : moves + ' κινήσεις';
+      document.getElementById('game-moves').textContent = movesText;
+      locked = true;
+
+      var a = flipped[0];
+      var b = flipped[1];
+
+      if (a.dataset.name === b.dataset.name && a.dataset.index !== b.dataset.index) {
+        a.classList.add('is-matched');
+        b.classList.add('is-matched');
+        matched++;
+        flipped = [];
+        locked = false;
+
+        if (matched === icons.length) {
+          setTimeout(function() {
+            document.getElementById('game-win').style.display = 'block';
+          }, 400);
+        }
+      } else {
+        setTimeout(function() {
+          a.classList.remove('is-flipped');
+          b.classList.remove('is-flipped');
+          flipped = [];
+          locked = false;
+        }, 800);
+      }
+    }
+  }
+
+  document.getElementById('game-reset').addEventListener('click', createBoard);
+  createBoard();
+}
+
 document.addEventListener('DOMContentLoaded', () => {
   initStackedSections();
   initAnnouncement();
@@ -624,6 +729,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initDifficulties();
   initTestimonials();
   initFooter();
+  initMemoryGame();
   initPageHero();
   initServicesDetail();
   initContactPage();
