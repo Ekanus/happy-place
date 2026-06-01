@@ -592,7 +592,7 @@ h1, h2, h3, h4, h5, h6 {
   max-width: 600px;
 }
 .footer__logo {
-  width: 340px;
+  width: 420px;
   height: auto;
   border: none;
   box-shadow: none;
@@ -691,9 +691,9 @@ h1, h2, h3, h4, h5, h6 {
 .memory-card__back::after {
   content: '★';
   font-family: var(--ff-heading);
-  font-size: 1.2rem;
+  font-size: 0.9rem;
   font-weight: 800;
-  color: #FFB347;
+  color: rgba(255,179,71,0.5);
 }
 .memory-card__front {
   transform: rotateY(180deg);
@@ -798,7 +798,7 @@ h1, h2, h3, h4, h5, h6 {
   .footer { padding: 3.5rem 0 2rem; border-radius: 24px 24px 0 0; }
   .footer__main { flex-direction: column; gap: 2.5rem; }
   .footer__left { max-width: 100%; }
-  .footer__logo { width: 240px; }
+  .footer__logo { width: 280px; }
   .footer__headline { font-size: clamp(2rem, 8vw, 2.8rem); }
   .memory-card { width: 60px; height: 60px; }
   .memory-grid { max-width: 268px; }
