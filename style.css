@@ -2454,7 +2454,7 @@ main {
    ============================================= */
 .newsletter-section--pink { background: #F0DCE6; }
 .newsletter-section {
-  background: #F0FAF7;
+  background: #F0DCE6;
   padding: 4rem 0;
 }
 @media (min-width: 1024px) { .newsletter-section { padding: 5rem 0; } }
@@ -2568,3 +2568,23 @@ main {
 }
 
 .newsletter-success.is-visible { display: block; }
+
+/* =============================================
+   SUBPAGE ROUNDED CORNERS
+   ============================================= */
+.page-hero { border-radius: 0 0 32px 32px; }
+.blog-grid-section { border-radius: 32px; margin-top: -32px; position: relative; z-index: 2; }
+.newsletter-section { border-radius: 32px; margin-top: -32px; position: relative; z-index: 3; }
+.services-cta-banner { border-radius: 32px; }
+.service-detail { border-radius: 0; }
+.contact-page-section { border-radius: 32px; }
+.faq-section { border-radius: 32px; }
+
+@media (max-width: 768px) {
+  .page-hero { border-radius: 0 0 24px 24px; }
+  .blog-grid-section,
+  .newsletter-section,
+  .services-cta-banner,
+  .contact-page-section,
+  .faq-section { border-radius: 24px; }
+}
