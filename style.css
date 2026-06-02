@@ -1050,6 +1050,50 @@ main {
 .hero-shape--palette        { fill: rgba(255,255,255,0.8); }
 .hero-shape--bolt           { fill: #FFB347; }
 
+.hero-scroll-hint {
+  position: absolute;
+  bottom: 2.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  opacity: 0.7;
+  transition: opacity 0.3s;
+}
+.hero-scroll-hint:hover { opacity: 1; }
+
+.hero-scroll-hint__mouse {
+  width: 26px;
+  height: 40px;
+  border: 2px solid rgba(255,255,255,0.8);
+  border-radius: 13px;
+  display: flex;
+  justify-content: center;
+  padding-top: 8px;
+}
+
+.hero-scroll-hint__wheel {
+  width: 4px;
+  height: 8px;
+  background: rgba(255,255,255,0.9);
+  border-radius: 2px;
+  animation: scrollWheel 1.8s ease-in-out infinite;
+}
+
+@keyframes scrollWheel {
+  0%   { opacity: 1; transform: translateY(0); }
+  50%  { opacity: 0.3; transform: translateY(8px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 768px) {
+  .hero-scroll-hint { bottom: 1.5rem; }
+  .hero-scroll-hint__mouse { width: 22px; height: 34px; }
+}
+
 /* narrative stacking handled in STACKED SECTION CARDS above */
 
 .narrative__panels {
