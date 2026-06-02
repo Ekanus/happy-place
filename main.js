@@ -334,7 +334,22 @@ function initDifficulties() {
   reveal('.difficulties .section-headline', { y: 40 });
   reveal('.difficulties .section-intro', { trigger: '.difficulties__header' });
   reveal('.difficulties__col', { stagger: 0.1, trigger: '.difficulties__grid' });
-  reveal('.pill', { stagger: 0.05, trigger: '.difficulties__grid' });
+  gsap.fromTo('.pill',
+    { opacity: 0, scale: 0.5, y: 15 },
+    {
+      opacity: 1,
+      scale: 1,
+      y: 0,
+      duration: 0.4,
+      ease: 'back.out(2)',
+      stagger: 0.06,
+      scrollTrigger: {
+        trigger: '.difficulties__grid',
+        start: 'top 85%',
+        toggleActions: 'play none none none',
+      }
+    }
+  );
 }
 
 /* =============================================

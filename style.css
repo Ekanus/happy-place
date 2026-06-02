@@ -1630,14 +1630,22 @@ main {
   padding: 0.4rem 0.9rem;
   border-radius: 20px;
   cursor: default;
-  transition: transform 0.2s var(--ease-out),
-              background 0.2s var(--ease-out),
-              color 0.2s var(--ease-out);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 .pill:hover {
-  transform: scale(1.05);
-  background: var(--c-primary);
-  color: #fff;
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.1);
+}
+
+.difficulties__col:nth-child(1) .pill {
+  background: rgba(144,196,174,0.15);
+  border-color: rgba(144,196,174,0.3);
+  color: #5a8a7d;
+}
+.difficulties__col:nth-child(2) .pill {
+  background: rgba(145,167,197,0.15);
+  border-color: rgba(145,167,197,0.3);
+  color: #5a6f8a;
 }
 
 .difficulties__footer {
