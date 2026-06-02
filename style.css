@@ -434,7 +434,9 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Mobile grid fixes */
 @media (max-width: 1024px) {
-  .stats__grid    { grid-template-columns: repeat(2, 1fr); }
+  .stats__grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (min-width: 769px) and (max-width: 1024px) {
   .services__grid { grid-template-columns: repeat(2, 1fr); }
 }
 /* STATS mobile */
@@ -459,7 +461,7 @@ h1, h2, h3, h4, h5, h6 {
 @media (max-width: 768px) {
   .services { padding: 4rem 0; }
   .services__grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr !important;
     gap: 1rem;
   }
   .service-card {
@@ -1052,8 +1054,9 @@ main {
 
 .hero-scroll-hint {
   position: absolute;
-  bottom: 2rem;
+  bottom: 1rem;
   left: 50%;
+  z-index: 5;
   transform: translateX(-50%);
   display: flex;
   flex-direction: column;
@@ -2635,8 +2638,8 @@ main {
   .narrative__headline {
     font-size: clamp(1.8rem, 7vw, 2.5rem);
   }
-  .narrative__shapes { display: none; }
-  .narrative-line { display: none; }
+  .narrative__shapes { opacity: 0.2; }
+  .narrative-line { opacity: 0.3; }
   .narrative__panel::before {
     width: 200px;
     height: 200px;
