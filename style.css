@@ -1706,7 +1706,9 @@ main {
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  transition: transform 0.3s var(--ease-out), box-shadow 0.3s var(--ease-out);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transform-style: preserve-3d;
+  will-change: transform;
 }
 .testimonial-card:hover {
   transform: translateY(-4px);

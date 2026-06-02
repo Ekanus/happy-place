@@ -717,6 +717,36 @@ function initMemoryGame() {
   createBoard();
 }
 
+function initCardTilt() {
+  if (window.innerWidth < 768) return;
+
+  document.querySelectorAll('.testimonial-card, .service-card').forEach(function(card) {
+    card.addEventListener('mousemove', function(e) {
+      var rect = card.getBoundingClientRect();
+      var x = (e.clientX - rect.left) / rect.width - 0.5;
+      var y = (e.clientY - rect.top) / rect.height - 0.5;
+      gsap.to(card, {
+        rotateY: x * 8,
+        rotateX: -y * 8,
+        boxShadow: '0 20px 40px rgba(0,0,0,0.12)',
+        duration: 0.4,
+        ease: 'power2.out',
+        overwrite: 'auto',
+      });
+    });
+
+    card.addEventListener('mouseleave', function() {
+      gsap.to(card, {
+        rotateY: 0,
+        rotateX: 0,
+        boxShadow: '0 4px 20px rgba(0,0,0,0.06)',
+        duration: 0.5,
+        ease: 'power3.out',
+      });
+    });
+  });
+}
+
 document.addEventListener('DOMContentLoaded', () => {
   initStackedSections();
   initAnnouncement();
@@ -731,6 +761,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initHowItWorks();
   initDifficulties();
   initTestimonials();
+  initCardTilt();
   initFooter();
   initMemoryGame();
   initPageHero();
