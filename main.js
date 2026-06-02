@@ -746,5 +746,15 @@ document.addEventListener('DOMContentLoaded', () => {
     { opacity: 1, y: 0, duration: 0.6, ease: 'power3.out' }
   );
 
+  var progressBar = document.getElementById('scroll-progress');
+  if (progressBar) {
+    window.addEventListener('scroll', function() {
+      var scrollTop = window.scrollY;
+      var docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      var progress = (scrollTop / docHeight) * 100;
+      progressBar.style.width = progress + '%';
+    }, { passive: true });
+  }
+
   // page-specific reveals go here
 });

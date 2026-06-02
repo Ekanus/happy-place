@@ -23,6 +23,18 @@
   --ease-out:    cubic-bezier(0.22, 1, 0.36, 1);
 }
 
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  width: 0%;
+  background: linear-gradient(to right, #90C4AE, #91A7C5, #C591A7, #FFB347);
+  z-index: 9999;
+  pointer-events: none;
+  transition: none;
+}
+
 /* --- RESET --- */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; }
