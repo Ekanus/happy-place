@@ -543,10 +543,11 @@ h1, h2, h3, h4, h5, h6 {
   margin-top: -32px;
   box-shadow: 0 -12px 48px rgba(0,0,0,0.06);
   padding: 5rem 0 2.5rem;
-  overflow: hidden;
+  overflow: visible;
 }
 .footer__shapes {
   position: absolute;
+  overflow: hidden;
   inset: 0;
   pointer-events: none;
   z-index: 0;
@@ -1039,6 +1040,14 @@ main {
   .hero-shape--pencil,
   .hero-shape--palette,
   .hero-shape--bolt { display: none; }
+}
+@media (max-width: 768px) {
+  .hero-shapes { overflow: hidden; }
+  .hero-shape--star1 { top: 8%; left: 5%; }
+  .hero-shape--heart { top: 30%; left: 3%; }
+  .hero-shape--star3 { bottom: 20%; left: 10%; }
+  .hero-shape--book  { bottom: 15%; right: 5%; }
+  .hero-shape--star2 { top: 15%; right: 5%; }
 }
 
 /* SHAPE COLORS — MINT BG: shapes must be white or accent */

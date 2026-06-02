@@ -564,7 +564,7 @@ function initPencilLine() {
     scrollTrigger: {
       trigger: '.narrative',
       start: 'top 95%',
-      end: '70% top',
+      end: window.innerWidth < 768 ? 'bottom 40%' : '70% top',
       scrub: true,
     }
   });
