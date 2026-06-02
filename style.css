@@ -2144,68 +2144,105 @@ main {
 
 /* Contact Info Card */
 .contact-info-card {
-  background: var(--c-primary-light);
-  border-radius: var(--radius-card);
+  background: #90C4AE;
+  border-radius: 20px;
   padding: 2.5rem;
   display: flex;
   flex-direction: column;
-  gap: 0.9rem;
+  gap: 1.2rem;
+  color: #ffffff;
+  position: relative;
+  overflow: hidden;
+}
+
+.contact-info-card__logo {
+  width: 140px;
+  height: auto;
+  border: none;
+  box-shadow: none;
+  filter: none;
+  border-radius: 0;
+  margin-bottom: 0.5rem;
 }
 
 .contact-info-card__title {
   font-family: var(--ff-heading);
-  font-size: 1.25rem;
-  font-weight: 700;
-  color: var(--c-text);
-  margin-bottom: 0.25rem;
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #ffffff;
 }
 
 .contact-info-card__phone-main {
-  display: block;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
   font-family: var(--ff-heading);
-  font-size: 1.45rem;
+  font-size: 1.6rem;
   font-weight: 800;
-  color: var(--c-primary);
-  transition: opacity 0.2s;
+  color: #ffffff;
+  text-decoration: none;
+  transition: opacity 0.2s, transform 0.2s;
 }
-.contact-info-card__phone-main:hover { opacity: 0.8; }
+.contact-info-card__phone-main:hover {
+  opacity: 0.85;
+  transform: translateX(4px);
+}
+
+.contact-info-card__items {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
 
 .contact-info-card__item {
   display: flex;
-  align-items: flex-start;
-  gap: 0.625rem;
+  align-items: center;
+  gap: 0.6rem;
   font-size: 0.9rem;
-  color: var(--c-text);
+  color: rgba(255,255,255,0.85);
 }
-.contact-info-card__item > span:first-child { flex-shrink: 0; line-height: 1.5; }
+.contact-info-card__item svg {
+  flex-shrink: 0;
+  stroke: rgba(255,255,255,0.7);
+}
 
-.contact-info-card__link { color: var(--c-text); transition: color 0.2s; }
-.contact-info-card__link:hover { color: var(--c-primary); }
+.contact-info-card__link {
+  color: #ffffff;
+  text-decoration: none;
+  transition: opacity 0.2s;
+}
+.contact-info-card__link:hover { opacity: 0.75; }
 
-.contact-info-card__divider {
-  border: none;
-  border-top: 1px solid rgba(144,196,174,0.25);
-  margin: 0.25rem 0;
+.contact-info-card__cta {
+  margin-top: 0.5rem;
+  padding-top: 1.2rem;
+  border-top: 1px solid rgba(255,255,255,0.25);
 }
 
 .contact-info-card__badge {
   display: inline-flex;
   align-items: center;
   gap: 0.35rem;
-  background: var(--c-primary);
-  color: #fff;
+  background: #ffffff;
+  color: #90C4AE;
   font-family: var(--ff-heading);
-  font-size: 0.85rem;
+  font-size: 0.9rem;
   font-weight: 700;
-  padding: 0.45rem 1.1rem;
-  border-radius: 20px;
+  padding: 0.6rem 1.3rem;
+  border-radius: 50px;
   width: fit-content;
+  transition: background 0.2s, color 0.2s;
+}
+.contact-info-card__badge:hover {
+  background: #FFB347;
+  color: #ffffff;
 }
 
 .contact-info-card__badge-note {
-  font-size: 0.875rem;
-  color: var(--c-muted);
-  line-height: 1.55;
+  font-size: 0.82rem;
+  color: rgba(255,255,255,0.6);
+  margin-top: 0.6rem;
+  line-height: 1.5;
 }
 
 /* Google Map */
