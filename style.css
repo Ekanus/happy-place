@@ -2334,7 +2334,7 @@ main {
    BLOG GRID SECTION
    ============================================= */
 .blog-grid-section { background: #fff; }
-.blog-grid-section--blue { background: #DCE6F0; }
+.blog-grid-section--blue { background: transparent; }
 
 .blog-grid__header {
   text-align: center;
@@ -2452,7 +2452,7 @@ main {
 /* =============================================
    NEWSLETTER SECTION
    ============================================= */
-.newsletter-section--pink { background: #F0DCE6; }
+.newsletter-section--pink { background: #DCE6F0; }
 .newsletter-section {
   background: #F0FAF7;
   padding: 4rem 0;
