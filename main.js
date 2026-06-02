@@ -801,11 +801,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
   var progressBar = document.getElementById('scroll-progress');
   if (progressBar) {
+    var currentWidth = 0;
     window.addEventListener('scroll', function() {
       var scrollTop = window.scrollY;
       var docHeight = document.documentElement.scrollHeight - window.innerHeight;
-      var progress = (scrollTop / docHeight) * 100;
-      progressBar.style.width = progress + '%';
+      var target = (scrollTop / docHeight) * 100;
+      currentWidth += (target - currentWidth) * 0.1;
+      progressBar.style.width = currentWidth + '%';
     }, { passive: true });
   }
 
