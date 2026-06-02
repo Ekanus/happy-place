@@ -89,19 +89,23 @@ function initHero() {
   gsap.from('.hero-shape, .hero-dot', { opacity: 0, scale: 0.5, duration: 0.6, ease: 'back.out(1.5)', stagger: 0.08, delay: 0.5 });
 
   // Mouse parallax on hero shapes
-  const heroSection = document.querySelector('.hero');
+  var heroSection = document.querySelector('.hero');
   if (heroSection && window.innerWidth > 768) {
-    const shapes = document.querySelectorAll('.hero-shape, .hero-dot');
+    var shapes = document.querySelectorAll('.hero-shape, .hero-dot');
+    // Disable CSS float animation so GSAP can control transform
+    shapes.forEach(function(shape) {
+      shape.style.animation = 'none';
+    });
     heroSection.addEventListener('mousemove', function(e) {
-      const rect = heroSection.getBoundingClientRect();
-      const x = (e.clientX - rect.left) / rect.width - 0.5;
-      const y = (e.clientY - rect.top) / rect.height - 0.5;
+      var rect = heroSection.getBoundingClientRect();
+      var x = (e.clientX - rect.left) / rect.width - 0.5;
+      var y = (e.clientY - rect.top) / rect.height - 0.5;
       shapes.forEach(function(shape, i) {
-        const depth = 15 + (i % 3) * 10;
+        var depth = 20 + (i % 4) * 12;
         gsap.to(shape, {
           x: x * depth,
           y: y * depth,
-          duration: 0.8,
+          duration: 1,
           ease: 'power2.out',
           overwrite: 'auto',
         });
