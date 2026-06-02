@@ -1926,7 +1926,7 @@ main {
 @media (min-width: 768px) { .page-hero { padding: 6rem 0 5rem; } }
 
 .page-hero--services { background: #F0DCE6; }
-.page-hero--blog     { background: #F0DCE6; }
+.page-hero--blog     { background: #DCE6F0; }
 .page-hero--contact  { background: #F0E8DC; }
 
 .page-hero__inner {
@@ -2452,7 +2452,7 @@ main {
 /* =============================================
    NEWSLETTER SECTION
    ============================================= */
-.newsletter-section--pink { background: #DCE6F0; }
+.newsletter-section--pink { background: #F0DCE6; }
 .newsletter-section {
   background: #F0FAF7;
   padding: 4rem 0;
