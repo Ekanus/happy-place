@@ -35,6 +35,28 @@
   transition: none;
 }
 
+.custom-cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 24px;
+  height: 24px;
+  pointer-events: none;
+  z-index: 10000;
+  opacity: 0;
+  transition: opacity 0.3s;
+  transform: translate(-4px, -2px) rotate(-30deg);
+}
+.custom-cursor.is-visible {
+  opacity: 1;
+}
+.narrative { cursor: none; }
+
+@media (max-width: 768px) {
+  .custom-cursor { display: none; }
+  .narrative { cursor: auto; }
+}
+
 /* --- RESET --- */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; }
