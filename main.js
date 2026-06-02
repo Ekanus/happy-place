@@ -762,11 +762,33 @@ function initCardTilt() {
   });
 }
 
+function initSmoothScroll() {
+  document.querySelectorAll('a[href^="#"]').forEach(function(link) {
+    link.addEventListener('click', function(e) {
+      var targetId = this.getAttribute('href');
+      if (targetId === '#') return;
+      var target = document.querySelector(targetId);
+      if (!target) return;
+      e.preventDefault();
+
+      var offset = 80;
+      var targetPosition = target.getBoundingClientRect().top + window.scrollY - offset;
+
+      gsap.to(window, {
+        scrollTo: { y: targetPosition, autoKill: false },
+        duration: 1.2,
+        ease: 'power3.inOut',
+      });
+    });
+  });
+}
+
 document.addEventListener('DOMContentLoaded', () => {
   initStackedSections();
   initAnnouncement();
   initNavScroll();
   initMobileMenu();
+  initSmoothScroll();
   initActiveNav();
   initHero();
   initNarrative();
