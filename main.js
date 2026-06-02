@@ -112,6 +112,17 @@ function initHero() {
       });
     });
   }
+
+  var scrollHint = document.querySelector('.hero-scroll-hint');
+  if (scrollHint) {
+    window.addEventListener('scroll', function() {
+      if (window.scrollY > 100) {
+        scrollHint.style.opacity = '0';
+      } else {
+        scrollHint.style.opacity = '0.7';
+      }
+    }, { passive: true });
+  }
 }
 
 

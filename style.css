@@ -432,13 +432,6 @@ h1, h2, h3, h4, h5, h6 {
   box-shadow: 0 -8px 40px rgba(0,0,0,0.06);
 }
 
-@media (max-width: 768px) {
-  .narrative, .stats, .services,
-  .how-it-works, .difficulties, .testimonials {
-    border-radius: 24px;
-  }
-}
-
 /* Mobile grid fixes */
 @media (max-width: 1024px) {
   .stats__grid    { grid-template-columns: repeat(2, 1fr); }
@@ -483,8 +476,8 @@ h1, h2, h3, h4, h5, h6 {
   .difficulties,
   .testimonials,
   .footer {
-    border-radius: 20px 20px 0 0;
-    margin-top: -20px;
+    border-radius: 24px 24px 0 0;
+    margin-top: -24px;
   }
 }
 
@@ -609,6 +602,34 @@ h1, h2, h3, h4, h5, h6 {
   background: #FFB347;
   color: #ffffff;
   transform: translateY(-2px);
+}
+
+.footer__right {
+  display: flex;
+  gap: 4rem;
+  flex-shrink: 0;
+  padding-top: 0.5rem;
+}
+.footer__col {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  min-width: 140px;
+}
+.footer__col-title {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.6);
+}
+.footer__col ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
 }
 
 /* ---- MEMORY GAME ---- */
@@ -788,6 +809,13 @@ h1, h2, h3, h4, h5, h6 {
   .footer__bottom { flex-direction: column; gap: 0.4rem; text-align: center; }
   .footer__shape:nth-child(2),
   .footer__shape:nth-child(3) { display: none; }
+}
+@media (max-width: 768px) {
+  .footer__right {
+    flex-direction: row;
+    gap: 2rem;
+    flex-wrap: wrap;
+  }
 }
 
 /* =============================================
@@ -2587,4 +2615,71 @@ main {
   .services-cta-banner,
   .contact-page-section,
   .faq-section { border-radius: 24px; }
+}
+
+/* =============================================
+   NARRATIVE PANELS MOBILE
+   ============================================= */
+@media (max-width: 768px) {
+  .narrative__panel {
+    min-height: auto;
+    padding: 4rem 0;
+  }
+  .narrative__panel-inner {
+    flex-direction: column !important;
+    gap: 2rem;
+  }
+  .narrative__text {
+    max-width: 100%;
+  }
+  .narrative__headline {
+    font-size: clamp(1.8rem, 7vw, 2.5rem);
+  }
+  .narrative__shapes { display: none; }
+  .narrative-line { display: none; }
+  .narrative__panel::before {
+    width: 200px;
+    height: 200px;
+    filter: blur(80px);
+    opacity: 0.25;
+  }
+}
+
+/* =============================================
+   HOW-IT-WORKS STEPS MOBILE
+   ============================================= */
+@media (max-width: 768px) {
+  .steps__grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  .steps__connector { display: none; }
+  .step-item {
+    text-align: center;
+  }
+}
+
+/* =============================================
+   CONTACT INFO CARD MOBILE
+   ============================================= */
+@media (max-width: 768px) {
+  .contact-info-card {
+    padding: 2rem;
+  }
+  .contact-info-card__logo { width: 120px; }
+  .contact-info-card__phone-main { font-size: 1.3rem; }
+}
+
+/* =============================================
+   BLOG / NEWSLETTER SUBPAGE MOBILE
+   ============================================= */
+@media (max-width: 768px) {
+  .blog-grid-section {
+    margin-top: -24px;
+    border-radius: 24px;
+  }
+  .newsletter-section {
+    margin-top: -24px;
+    border-radius: 24px;
+  }
 }
