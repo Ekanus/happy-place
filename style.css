@@ -1922,7 +1922,7 @@ main {
 }
 @media (min-width: 768px) { .page-hero { padding: 6rem 0 5rem; } }
 
-.page-hero--services { background: #DCE6F0; }
+.page-hero--services { background: #F0DCE6; }
 .page-hero--blog     { background: #F0DCE6; }
 .page-hero--contact  { background: #F0E8DC; }
 
@@ -2032,7 +2032,7 @@ main {
    SERVICES CTA BANNER
    ============================================= */
 .services-cta-banner {
-  background: #90C4AE;
+  background: #91A7C5;
   padding: 4rem 0;
   text-align: center;
 }
