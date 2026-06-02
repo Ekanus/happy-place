@@ -1922,6 +1922,10 @@ main {
 }
 @media (min-width: 768px) { .page-hero { padding: 6rem 0 5rem; } }
 
+.page-hero--services { background: #DCE6F0; }
+.page-hero--blog     { background: #F0DCE6; }
+.page-hero--contact  { background: #F0E8DC; }
+
 .page-hero__inner {
   display: flex;
   flex-direction: column;
