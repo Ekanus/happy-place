@@ -101,59 +101,6 @@ h1, h2, h3, h4, h5, h6 {
 /* =============================================
    ANNOUNCEMENT BANNER
    ============================================= */
-.announcement {
-  position: fixed;
-  top: 0; left: 0; right: 0;
-  z-index: 200;
-  background: var(--c-primary);
-  color: #fff;
-  overflow: hidden;
-}
-.announcement__inner {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0.65rem 3rem 0.65rem 1.25rem;
-}
-@media (min-width: 768px) {
-  .announcement__inner { padding: 0.65rem 4rem; }
-}
-.announcement__text {
-  font-family: var(--ff-body);
-  font-size: 0.875rem;
-  text-align: center;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  flex-wrap: wrap;
-  justify-content: center;
-  line-height: 1.4;
-}
-.announcement__cta {
-  font-weight: 600;
-  text-decoration: underline;
-  white-space: nowrap;
-  transition: opacity 0.2s;
-}
-.announcement__cta:hover { opacity: 0.8; }
-.announcement__dismiss {
-  position: absolute;
-  right: 0.75rem;
-  top: 50%;
-  transform: translateY(-50%);
-  color: #fff;
-  font-size: 1.25rem;
-  line-height: 1;
-  opacity: 0.75;
-  padding: 0.4rem;
-  border-radius: 50%;
-  transition: opacity 0.2s, background 0.2s;
-}
-.announcement__dismiss:hover {
-  opacity: 1;
-  background: rgba(255,255,255,0.15);
-}
 
 /* =============================================
    NAV

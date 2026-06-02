@@ -29,71 +29,6 @@ function reveal(targets, options = {}) {
   );
 }
 
-/* =============================================
-   ANNOUNCEMENT BANNER
-   ============================================= */
-function updateBannerHeight() {
-  const el = document.getElementById('announcement');
-  const h = (el && el.style.display !== 'none') ? el.offsetHeight : 0;
-  document.documentElement.style.setProperty('--banner-h', h + 'px');
-}
-
-function dismissAnnouncement() {
-  const el = document.getElementById('announcement');
-  gsap.to(el, {
-    height: 0,
-    opacity: 0,
-    paddingTop: 0,
-    paddingBottom: 0,
-    duration: 0.4,
-    ease: 'power3.in',
-    onComplete: () => {
-      el.style.display = 'none';
-      sessionStorage.setItem('announcement-dismissed', '1');
-      updateBannerHeight();
-    },
-  });
-}
-
-function initAnnouncement() {
-  if (sessionStorage.getItem('announcement-dismissed')) return;
-
-  const jsonPath = '/announcement.json';
-
-  fetch(jsonPath)
-    .then(r => r.json())
-    .then(data => {
-      if (!data.active) return;
-
-      const el     = document.getElementById('announcement');
-      const textEl = document.getElementById('announcement-text');
-      const ctaEl  = document.getElementById('announcement-cta');
-
-      textEl.textContent = data.text;
-      if (data.cta && data.ctaLink) {
-        ctaEl.textContent = data.cta;
-        ctaEl.href = data.ctaLink;
-      } else {
-        ctaEl.remove();
-      }
-
-      el.style.display = '';
-      updateBannerHeight();
-
-      gsap.from(el, {
-        height: 0,
-        opacity: 0,
-        paddingTop: 0,
-        paddingBottom: 0,
-        duration: 0.5,
-        ease: 'power3.out',
-      });
-
-      document.querySelector('.announcement__dismiss')
-        .addEventListener('click', dismissAnnouncement);
-    })
-    .catch(() => {});
-}
 
 /* =============================================
    NAV SCROLL STATE
@@ -829,7 +764,6 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   initStackedSections();
-  initAnnouncement();
   initNavScroll();
   initMobileMenu();
   initSmoothScroll();
