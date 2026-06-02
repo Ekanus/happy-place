@@ -2513,10 +2513,19 @@ main {
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
+  gap: 1.5rem;
 }
 .page-loader__logo {
-  width: 180px;
+  width: 200px;
   height: auto;
   animation: breathe 2s ease-in-out infinite;
+}
+.page-loader__text {
+  font-family: var(--ff-heading);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: rgba(255,255,255,0.8);
+  letter-spacing: 0.05em;
 }
 .newsletter-success.is-visible { display: block; }
