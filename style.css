@@ -2525,4 +2525,51 @@ main {
   font-weight: 600;
   color: #065F46;
 }
+
+/* BACK TO TOP */
+.back-to-top {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: #90C4AE;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: opacity 0.3s, visibility 0.3s, transform 0.3s, background 0.2s;
+  z-index: 900;
+}
+.back-to-top.is-visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+.back-to-top:hover {
+  background: #FFB347;
+  transform: translateY(-3px);
+}
+
+/* PAGE LOADER */
+.page-loader {
+  position: fixed;
+  inset: 0;
+  background: #90C4AE;
+  z-index: 99999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.page-loader__logo {
+  width: 180px;
+  height: auto;
+  animation: breathe 2s ease-in-out infinite;
+}
 .newsletter-success.is-visible { display: block; }

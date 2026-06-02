@@ -815,6 +815,19 @@ function initCustomCursor() {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
+  var loader = document.getElementById('page-loader');
+  if (loader) {
+    gsap.to(loader, {
+      opacity: 0,
+      duration: 0.5,
+      delay: 0.4,
+      ease: 'power2.in',
+      onComplete: function() {
+        loader.style.display = 'none';
+      }
+    });
+  }
+
   initStackedSections();
   initAnnouncement();
   initNavScroll();
@@ -854,6 +867,20 @@ document.addEventListener('DOMContentLoaded', () => {
       var progress = (scrollTop / docHeight) * 100;
       progressBar.style.width = progress + '%';
     }, { passive: true });
+  }
+
+  var backBtn = document.getElementById('back-to-top');
+  if (backBtn) {
+    window.addEventListener('scroll', function() {
+      backBtn.classList.toggle('is-visible', window.scrollY > 600);
+    }, { passive: true });
+    backBtn.addEventListener('click', function() {
+      gsap.to(window, {
+        scrollTo: { y: 0, autoKill: false },
+        duration: 1,
+        ease: 'power3.inOut',
+      });
+    });
   }
 
   // page-specific reveals go here
