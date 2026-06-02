@@ -152,6 +152,27 @@ function initHero() {
   gsap.from('.hero-sub',       { opacity: 0, y: 20, duration: 0.6, ease: 'power3.out', delay: 0.9 });
   gsap.from('.hero-cta',       { opacity: 0, y: 20, duration: 0.6, ease: 'power3.out', delay: 1.1 });
   gsap.from('.hero-shape, .hero-dot', { opacity: 0, scale: 0.5, duration: 0.6, ease: 'back.out(1.5)', stagger: 0.08, delay: 0.5 });
+
+  // Mouse parallax on hero shapes
+  const heroSection = document.querySelector('.hero');
+  if (heroSection && window.innerWidth > 768) {
+    const shapes = document.querySelectorAll('.hero-shape, .hero-dot');
+    heroSection.addEventListener('mousemove', function(e) {
+      const rect = heroSection.getBoundingClientRect();
+      const x = (e.clientX - rect.left) / rect.width - 0.5;
+      const y = (e.clientY - rect.top) / rect.height - 0.5;
+      shapes.forEach(function(shape, i) {
+        const depth = 15 + (i % 3) * 10;
+        gsap.to(shape, {
+          x: x * depth,
+          y: y * depth,
+          duration: 0.8,
+          ease: 'power2.out',
+          overwrite: 'auto',
+        });
+      });
+    });
+  }
 }
 
 
