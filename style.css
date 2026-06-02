@@ -27,7 +27,7 @@
   position: fixed;
   top: 0;
   left: 0;
-  height: 3px;
+  height: 2px;
   width: 0%;
   background: linear-gradient(to right, #90C4AE, #91A7C5, #C591A7, #FFB347);
   z-index: 9999;
@@ -2533,11 +2533,5 @@ main {
   height: auto;
   animation: breathe 2s ease-in-out infinite;
 }
-.page-loader__text {
-  font-family: var(--ff-heading);
-  font-size: 1.1rem;
-  font-weight: 700;
-  color: rgba(255,255,255,0.8);
-  letter-spacing: 0.05em;
-}
+
 .newsletter-success.is-visible { display: block; }

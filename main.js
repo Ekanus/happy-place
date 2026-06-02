@@ -753,33 +753,21 @@ document.addEventListener('DOMContentLoaded', () => {
   var loader = document.getElementById('page-loader');
   if (loader) {
     var loaderLogo = loader.querySelector('.page-loader__logo');
-    var loaderText = loader.querySelector('.page-loader__text');
-    var tl = gsap.timeline({ delay: 0.8 });
-
-    tl.to(loaderLogo, {
-      scale: 1.15,
-      duration: 0.6,
-      ease: 'power2.inOut',
-    });
-    tl.to(loaderText, {
-      opacity: 0,
-      y: -10,
-      duration: 0.3,
-      ease: 'power2.in',
-    }, '-=0.3');
-    tl.to(loaderLogo, {
-      scale: 40,
-      opacity: 0,
-      duration: 0.7,
-      ease: 'power3.in',
-    });
-    tl.to(loader, {
-      opacity: 0,
-      duration: 0.3,
-      onComplete: function() {
-        loader.style.display = 'none';
-      }
-    }, '-=0.3');
+    gsap.set(loaderLogo, { scale: 1 });
+    gsap.timeline({ delay: 1 })
+      .to(loaderLogo, {
+        scale: 1.2,
+        duration: 0.8,
+        ease: 'power2.inOut',
+      })
+      .to(loader, {
+        opacity: 0,
+        duration: 0.8,
+        ease: 'power2.inOut',
+        onComplete: function() {
+          loader.style.display = 'none';
+        }
+      }, '-=0.3');
   }
 
   initStackedSections();
