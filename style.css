@@ -1102,7 +1102,7 @@ main {
 }
 
 @media (max-width: 768px) {
-  .hero-scroll-hint { bottom: 1.5rem; }
+  .hero-scroll-hint { display: none; }
   .hero-scroll-hint__mouse { width: 22px; height: 34px; }
 }
 
