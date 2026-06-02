@@ -1716,8 +1716,9 @@ main {
 }
 
 .testimonial-card__stars {
-  font-size: 1rem;
-  letter-spacing: 0.1em;
+  display: flex;
+  gap: 3px;
+  margin-bottom: 1rem;
 }
 
 .testimonial-card__quote {
