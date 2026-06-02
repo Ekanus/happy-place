@@ -669,30 +669,29 @@ function initMemoryGame() {
 
 function initCardTilt() {
   if (window.innerWidth < 768) return;
+  if ('ontouchstart' in window) return;
 
-  document.querySelectorAll('.testimonial-card, .service-card').forEach(function(card) {
+  var cards = document.querySelectorAll('.testimonial-card, .service-card');
+  if (!cards.length) return;
+
+  cards.forEach(function(card) {
+    card.style.transition = 'transform 0.2s ease, box-shadow 0.2s ease';
+    card.style.transformStyle = 'preserve-3d';
+    card.style.willChange = 'transform';
+
     card.addEventListener('mousemove', function(e) {
       var rect = card.getBoundingClientRect();
-      var x = (e.clientX - rect.left) / rect.width - 0.5;
-      var y = (e.clientY - rect.top) / rect.height - 0.5;
-      gsap.to(card, {
-        rotateY: x * 8,
-        rotateX: -y * 8,
-        boxShadow: '0 20px 40px rgba(0,0,0,0.12)',
-        duration: 0.4,
-        ease: 'power2.out',
-        overwrite: 'auto',
-      });
+      var centerX = rect.left + rect.width / 2;
+      var centerY = rect.top + rect.height / 2;
+      var rotateY = ((e.clientX - centerX) / (rect.width / 2)) * 6;
+      var rotateX = ((centerY - e.clientY) / (rect.height / 2)) * 6;
+      card.style.transform = 'perspective(800px) rotateX(' + rotateX + 'deg) rotateY(' + rotateY + 'deg) scale(1.02)';
+      card.style.boxShadow = '0 20px 40px rgba(0,0,0,0.12)';
     });
 
     card.addEventListener('mouseleave', function() {
-      gsap.to(card, {
-        rotateY: 0,
-        rotateX: 0,
-        boxShadow: '0 4px 20px rgba(0,0,0,0.06)',
-        duration: 0.5,
-        ease: 'power3.out',
-      });
+      card.style.transform = 'perspective(800px) rotateX(0deg) rotateY(0deg) scale(1)';
+      card.style.boxShadow = '';
     });
   });
 }

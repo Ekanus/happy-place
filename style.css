@@ -1348,9 +1348,6 @@ main {
   border-radius: 20px;
   padding: 2.5rem;
   border: 1.5px solid rgba(144,196,174,0.15);
-  transform-style: preserve-3d;
-  will-change: transform;
-  perspective: 1000px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -1687,17 +1684,6 @@ main {
   flex-direction: column;
   gap: 1rem;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  transform-style: preserve-3d;
-  will-change: transform;
-  perspective: 800px;
-}
-.testimonial-card *,
-.service-card * {
-  pointer-events: none;
-}
-.service-card__link,
-.testimonial-card a {
-  pointer-events: auto;
 }
 .testimonial-card:hover {
   transform: translateY(-4px);
