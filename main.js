@@ -274,6 +274,29 @@ function initHowItWorks() {
       '-=0.3'
     );
   });
+
+  // Mobile: animate vertical connector lines between steps
+  if (window.innerWidth < 768) {
+    document.querySelectorAll('.step-item:not(:last-child)').forEach(function(step) {
+      var connector = document.createElement('div');
+      connector.className = 'step-connector-mobile';
+      step.parentNode.insertBefore(connector, step.nextSibling);
+
+      gsap.fromTo(connector,
+        { scaleY: 0, transformOrigin: 'top center' },
+        {
+          scaleY: 1,
+          duration: 0.5,
+          ease: 'power2.out',
+          scrollTrigger: {
+            trigger: connector,
+            start: 'top 90%',
+            toggleActions: 'play none none none',
+          }
+        }
+      );
+    });
+  }
 }
 
 /* =============================================
@@ -565,9 +588,9 @@ function initPencilLine() {
     ease: 'none',
     scrollTrigger: {
       trigger: '.narrative',
-      start: 'top 90%',
-      end: window.innerWidth < 768 ? 'bottom 60%' : '70% top',
-      scrub: true,
+      start: 'top 85%',
+      end: window.innerWidth < 768 ? '40% top' : '65% top',
+      scrub: 0.5,
     }
   });
 }
