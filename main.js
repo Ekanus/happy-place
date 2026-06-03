@@ -55,6 +55,7 @@ function initMobileMenu() {
     burger.setAttribute('aria-expanded', 'true');
     overlay.setAttribute('aria-hidden', 'false');
     document.body.style.overflow = 'hidden';
+    document.querySelector('.nav__overlay-cta').removeAttribute('tabindex');
   }
 
   function closeMenu() {
@@ -63,6 +64,7 @@ function initMobileMenu() {
     burger.setAttribute('aria-expanded', 'false');
     overlay.setAttribute('aria-hidden', 'true');
     document.body.style.overflow = '';
+    document.querySelector('.nav__overlay-cta').setAttribute('tabindex', '-1');
   }
 
   burger.addEventListener('click', () => {
@@ -187,16 +189,16 @@ function initServices() {
   document.querySelectorAll('.service-card').forEach((card, i) => {
     const fromLeft = i % 2 === 0;
     gsap.fromTo(card,
-      { opacity: 0, x: fromLeft ? -60 : 60, rotateY: fromLeft ? 6 : -6 },
+      { opacity: 0, x: window.innerWidth < 768 ? (fromLeft ? -30 : 30) : (fromLeft ? -60 : 60), rotateY: fromLeft ? 6 : -6 },
       {
         opacity: 1,
         x: 0,
         rotateY: 0,
-        duration: 0.8,
+        duration: 0.5,
         ease: 'power3.out',
         scrollTrigger: {
           trigger: card,
-          start: 'top 88%',
+          start: 'top 92%',
           toggleActions: 'play none none none',
         }
       }
@@ -563,8 +565,8 @@ function initPencilLine() {
     ease: 'none',
     scrollTrigger: {
       trigger: '.narrative',
-      start: 'top 95%',
-      end: window.innerWidth < 768 ? 'bottom 40%' : '70% top',
+      start: 'top 90%',
+      end: window.innerWidth < 768 ? 'bottom 60%' : '70% top',
       scrub: true,
     }
   });
