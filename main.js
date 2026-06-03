@@ -189,16 +189,16 @@ function initServices() {
   document.querySelectorAll('.service-card').forEach((card, i) => {
     const fromLeft = i % 2 === 0;
     gsap.fromTo(card,
-      { opacity: 0, x: window.innerWidth < 768 ? (fromLeft ? -30 : 30) : (fromLeft ? -60 : 60), rotateY: fromLeft ? 6 : -6 },
+      { opacity: 0, x: fromLeft ? -20 : 20 },
       {
         opacity: 1,
         x: 0,
         rotateY: 0,
-        duration: 0.5,
+        duration: 0.45,
         ease: 'power3.out',
         scrollTrigger: {
           trigger: card,
-          start: 'top 92%',
+          start: 'top 94%',
           toggleActions: 'play none none none',
         }
       }
@@ -346,31 +346,51 @@ function initTestimonials() {
 function initFooter() {
   if (!document.querySelector('.footer')) return;
 
-  gsap.fromTo('.footer__logo',
-    { opacity: 0, scale: 0.9 },
-    { opacity: 1, scale: 1, duration: 0.8, ease: 'power3.out',
-      scrollTrigger: { trigger: '.footer__main', start: 'top 90%' } }
-  );
-  gsap.fromTo('.footer__headline',
-    { opacity: 0, y: 30 },
-    { opacity: 1, y: 0, duration: 0.7, ease: 'power3.out', delay: 0.15,
-      scrollTrigger: { trigger: '.footer__main', start: 'top 90%' } }
-  );
-  gsap.fromTo('.footer__cta',
-    { opacity: 0, y: 20 },
-    { opacity: 1, y: 0, duration: 0.6, ease: 'power3.out', delay: 0.3,
-      scrollTrigger: { trigger: '.footer__main', start: 'top 90%' } }
-  );
-  gsap.fromTo('.footer__game',
-    { opacity: 0, y: 30 },
-    { opacity: 1, y: 0, duration: 0.7, ease: 'power3.out',
-      scrollTrigger: { trigger: '.footer__main', start: 'top 85%' } }
-  );
-  gsap.fromTo('.footer__shape',
-    { opacity: 0, scale: 0 },
-    { opacity: 1, scale: 1, duration: 0.5, ease: 'back.out(2)', stagger: 0.1,
-      scrollTrigger: { trigger: '.footer', start: 'top 85%' } }
-  );
+  var footerMain = document.querySelector('.footer__main');
+  if (!footerMain) return;
+
+  if (document.querySelector('.footer__logo')) {
+    gsap.fromTo('.footer__logo',
+      { opacity: 0, scale: 0.9 },
+      { opacity: 1, scale: 1, duration: 0.8, ease: 'power3.out',
+        scrollTrigger: { trigger: '.footer__main', start: 'top 90%' } }
+    );
+  }
+  if (document.querySelector('.footer__headline')) {
+    gsap.fromTo('.footer__headline',
+      { opacity: 0, y: 30 },
+      { opacity: 1, y: 0, duration: 0.7, ease: 'power3.out', delay: 0.15,
+        scrollTrigger: { trigger: '.footer__main', start: 'top 90%' } }
+    );
+  }
+  if (document.querySelector('.footer__cta')) {
+    gsap.fromTo('.footer__cta',
+      { opacity: 0, y: 20 },
+      { opacity: 1, y: 0, duration: 0.6, ease: 'power3.out', delay: 0.3,
+        scrollTrigger: { trigger: '.footer__main', start: 'top 90%' } }
+    );
+  }
+  if (document.querySelector('.footer__game')) {
+    gsap.fromTo('.footer__game',
+      { opacity: 0, y: 30 },
+      { opacity: 1, y: 0, duration: 0.7, ease: 'power3.out',
+        scrollTrigger: { trigger: '.footer__main', start: 'top 85%' } }
+    );
+  }
+  if (document.querySelector('.footer__right')) {
+    gsap.fromTo('.footer__col',
+      { opacity: 0, y: 30 },
+      { opacity: 1, y: 0, duration: 0.6, ease: 'power3.out', stagger: 0.12,
+        scrollTrigger: { trigger: '.footer__main', start: 'top 88%' } }
+    );
+  }
+  if (document.querySelector('.footer__shape')) {
+    gsap.fromTo('.footer__shape',
+      { opacity: 0, scale: 0 },
+      { opacity: 1, scale: 1, duration: 0.5, ease: 'back.out(2)', stagger: 0.1,
+        scrollTrigger: { trigger: '.footer', start: 'top 85%' } }
+    );
+  }
 }
 
 /* =============================================
@@ -379,14 +399,21 @@ function initFooter() {
 function initPageHero() {
   if (!document.querySelector('.page-hero')) return;
 
-  gsap.fromTo('.page-hero .section-eyebrow',
-    { opacity: 0, y: 20 },
-    { opacity: 1, y: 0, duration: 0.6, ease: 'power3.out', delay: 0.3 }
-  );
-  gsap.fromTo('.page-hero__title',
-    { opacity: 0, y: 35 },
-    { opacity: 1, y: 0, duration: 0.7, ease: 'power3.out', delay: 0.5 }
-  );
+  var eyebrow = document.querySelector('.page-hero .section-eyebrow');
+  var title   = document.querySelector('.page-hero__title');
+
+  if (eyebrow) {
+    gsap.fromTo(eyebrow,
+      { opacity: 0, y: 20 },
+      { opacity: 1, y: 0, duration: 0.6, ease: 'power3.out', delay: 0.3 }
+    );
+  }
+  if (title) {
+    gsap.fromTo(title,
+      { opacity: 0, y: 35 },
+      { opacity: 1, y: 0, duration: 0.7, ease: 'power3.out', delay: 0.5 }
+    );
+  }
 }
 
 /* =============================================
@@ -537,6 +564,10 @@ function initContactPageForm() {
    STACKED SECTIONS SCROLL ANIMATION
    ============================================= */
 function initStackedSections() {
+  var heroCenter = document.querySelector('.hero-center');
+  var narrative  = document.querySelector('.narrative');
+  if (!heroCenter || !narrative) return;
+
   gsap.to('.hero-center', {
     scale: 0.8,
     opacity: 0,
@@ -549,11 +580,10 @@ function initStackedSections() {
     }
   });
 
-  const sections = document.querySelectorAll(
+  var sections = document.querySelectorAll(
     '.narrative, .stats, .services, .how-it-works, .difficulties, .testimonials, .footer'
   );
-
-  sections.forEach((section) => {
+  sections.forEach(function(section) {
     gsap.fromTo(section,
       { yPercent: 15 },
       {
