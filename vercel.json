@@ -1,7 +1,10 @@
 {
+  "functions": {
+    "api/*.js": { "runtime": "nodejs20.x" }
+  },
   "rewrites": [
-    { "source": "/services", "destination": "/pages/services.html" },
-    { "source": "/blog", "destination": "/pages/blog.html" },
-    { "source": "/contact", "destination": "/pages/contact.html" }
+    { "source": "/services", "destination": "/services.html" },
+    { "source": "/blog",     "destination": "/blog.html" },
+    { "source": "/contact",  "destination": "/contact.html" }
   ]
 }
