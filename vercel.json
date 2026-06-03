@@ -1,7 +1,4 @@
 {
-  "functions": {
-    "api/*.js": { "runtime": "nodejs20.x" }
-  },
   "rewrites": [
     { "source": "/services", "destination": "/services.html" },
     { "source": "/blog",     "destination": "/blog.html" },
