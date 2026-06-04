@@ -13,8 +13,9 @@
   --c-muted:         #718096;
   --c-line:          rgba(45,55,72,0.08);
 
-  --ff-heading: 'Nunito', sans-serif;
-  --ff-body:    'Inter', sans-serif;
+  --ff-heading:     'Nunito', sans-serif;
+  --ff-body:        'Inter', sans-serif;
+  --ff-handwritten: 'Caveat', cursive;
 
   --nav-h:       72px;
   --banner-h:    0px;
@@ -932,12 +933,12 @@ main {
   text-align: center;
 }
 .hero-headline {
-  font-family: var(--ff-heading);
-  font-size: clamp(1.6rem, 3.5vw, 2.6rem);
+  font-family: var(--ff-handwritten);
+  font-size: clamp(2.2rem, 5vw, 3.8rem);
+  letter-spacing: 0.01em;
   font-weight: 900;
   color: #ffffff;
   line-height: 1.15;
-  letter-spacing: -0.02em;
   margin: 0;
   text-shadow: 0 2px 20px rgba(0,0,0,0.1);
 }
