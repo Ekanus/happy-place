@@ -435,7 +435,7 @@ h1, h2, h3, h4, h5, h6 {
   position: relative;
   z-index: 3;
   background: #F7FBFA;
-  border-radius: 32px 32px 0 0;
+  border-radius: 32px;
   margin-top: -32px;
   padding: 5rem 0 7rem;
 }
