@@ -207,27 +207,29 @@ function initServices() {
 }
 
 /* =============================================
-   STATS SECTION ANIMATIONS
+   GALLERY SECTION ANIMATIONS
    ============================================= */
-function initStats() {
-  if (!document.querySelector('.stats')) return;
+function initGallery() {
+  var items = document.querySelectorAll('.gallery__item');
+  if (!items.length) return;
 
-  document.querySelectorAll('.stats__number').forEach(el => {
-    const target = parseInt(el.dataset.target, 10);
-    const suffix = el.dataset.suffix || '';
-    gsap.fromTo({ val: 0 }, { val: target },
+  items.forEach(function(item, i) {
+    gsap.fromTo(item,
+      { opacity: 0, y: 40, scale: 0.92 },
       {
-        duration: 2,
-        ease: 'power2.out',
-        scrollTrigger: { trigger: el, start: 'top 92%' },
-        onUpdate: function() {
-          el.textContent = Math.round(this.targets()[0].val) + suffix;
-        },
+        opacity: 1,
+        y: 0,
+        scale: 1,
+        duration: 0.6,
+        ease: 'power3.out',
+        scrollTrigger: {
+          trigger: item,
+          start: 'top 92%',
+          toggleActions: 'play none none none',
+        }
       }
     );
   });
-
-  reveal('.stats__label', { stagger: 0.1, trigger: '.stats__grid' });
 }
 
 /* =============================================
@@ -848,7 +850,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initHero();
   initNarrative();
   initPencilLine();
-  initStats();
+  initGallery();
   initServices();
   initHowItWorks();
   initDifficulties();

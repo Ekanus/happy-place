@@ -419,14 +419,55 @@ h1, h2, h3, h4, h5, h6 {
   opacity: 0.5;
 }
 
-.stats {
+/* GALLERY */
+.gallery {
   position: relative;
   z-index: 3;
-  background: #2D3748;
-  border-radius: 32px;
+  background: #ffffff;
+  border-radius: 32px 32px 0 0;
   margin-top: -32px;
-  padding: 6rem 0;
-  box-shadow: 0 -8px 40px rgba(0,0,0,0.15);
+  padding: 5rem 0;
+}
+
+.gallery__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-top: 3rem;
+}
+
+.gallery__item {
+  border-radius: 16px;
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery__item:hover {
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 16px 40px rgba(0,0,0,0.15);
+  z-index: 2;
+}
+
+.gallery__item--tall {
+  grid-row: span 2;
+}
+
+.gallery__item--wide {
+  grid-column: span 2;
+}
+
+.gallery__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.gallery__item:hover .gallery__img {
+  transform: scale(1.08);
 }
 
 .services {
@@ -470,27 +511,24 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* Mobile grid fixes */
-@media (max-width: 1024px) {
-  .stats__grid { grid-template-columns: repeat(2, 1fr); }
-}
 @media (min-width: 769px) and (max-width: 1024px) {
   .services__grid { grid-template-columns: repeat(2, 1fr); }
 }
-/* STATS mobile */
+/* GALLERY mobile */
 @media (max-width: 768px) {
-  .stats { padding: 3.5rem 0; }
-  .stats__grid {
+  .gallery {
+    padding: 3.5rem 0;
+    border-radius: 24px 24px 0 0;
+  }
+  .gallery__grid {
     grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
   }
-  .stats__item::after {
-    display: none;
+  .gallery__item--tall {
+    grid-row: span 1;
   }
-  .stats__item {
-    border-bottom: 1px solid rgba(255,255,255,0.08);
-    padding: 1.5rem 1rem;
-  }
-  .stats__number {
-    font-size: clamp(2.5rem, 10vw, 4rem);
+  .gallery__item--wide {
+    grid-column: span 2;
   }
 }
 
@@ -509,7 +547,7 @@ h1, h2, h3, h4, h5, h6 {
 /* Sections border-radius mobile */
 @media (max-width: 768px) {
   .narrative,
-  .stats,
+  .gallery,
   .services,
   .how-it-works,
   .difficulties,
@@ -1362,49 +1400,6 @@ main {
   }
 }
 
-/* =============================================
-   STATS SECTION
-   ============================================= */
-.stats__grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 0;
-}
-
-.stats__item {
-  text-align: center;
-  padding: 2rem;
-  position: relative;
-}
-
-.stats__item::after {
-  content: '';
-  position: absolute;
-  right: 0;
-  top: 20%;
-  height: 60%;
-  width: 1px;
-  background: rgba(255,255,255,0.1);
-}
-
-.stats__item:last-child::after { display: none; }
-
-.stats__number {
-  font-family: var(--ff-heading);
-  font-size: clamp(3.5rem, 7vw, 6rem);
-  font-weight: 900;
-  color: #ffffff;
-  line-height: 1;
-  letter-spacing: -0.03em;
-  display: block;
-  margin-bottom: 0.5rem;
-}
-
-.stats__label {
-  font-size: 0.88rem;
-  color: rgba(255,255,255,0.6);
-  line-height: 1.4;
-}
 
 /* =============================================
    SERVICES SECTION
