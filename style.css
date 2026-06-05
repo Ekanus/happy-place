@@ -226,8 +226,8 @@ h1, h2, h3, h4, h5, h6 {
   align-items: baseline;
   gap: 0.2rem;
   font-family: var(--ff-handwritten);
-  font-weight: 900;
-  font-size: 1.3rem;
+  font-weight: 800;
+  font-size: 1.4rem;
   white-space: nowrap;
   flex-shrink: 0;
 }
@@ -437,7 +437,7 @@ h1, h2, h3, h4, h5, h6 {
   background: #F7FBFA;
   border-radius: 32px 32px 0 0;
   margin-top: -32px;
-  padding: 5rem 0 6rem;
+  padding: 5rem 0 7rem;
 }
 
 .gallery__grid {
