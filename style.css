@@ -547,6 +547,17 @@ h1, h2, h3, h4, h5, h6 {
   padding: 7rem 0 8rem;
   box-shadow: 0 -8px 40px rgba(0,0,0,0.06);
 }
+.testimonials::after {
+  content: '';
+  position: absolute;
+  bottom: -60px;
+  left: 0;
+  right: 0;
+  height: 60px;
+  background: inherit;
+  z-index: 10;
+  pointer-events: none;
+}
 
 /* Mobile grid fixes */
 @media (min-width: 769px) and (max-width: 1024px) {
