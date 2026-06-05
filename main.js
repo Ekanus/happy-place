@@ -252,8 +252,8 @@ function initHowItWorks() {
     scrollTrigger: {
       trigger: '.steps__grid',
       start: 'top 80%',
-      end: 'top 40%',
-      scrub: true,
+      end: window.innerWidth < 768 ? 'bottom 20%' : 'bottom 30%',
+      scrub: 1.5,
     }
   });
 
@@ -623,8 +623,8 @@ function initPencilLine() {
     scrollTrigger: {
       trigger: '.narrative',
       start: 'top 85%',
-      end: window.innerWidth < 768 ? '40% top' : '65% top',
-      scrub: 0.5,
+      end: window.innerWidth < 768 ? '60% top' : '80% top',
+      scrub: 2,
     }
   });
 }

@@ -87,11 +87,22 @@
 .custom-cursor.is-visible {
   opacity: 1;
 }
-.narrative { cursor: none; }
+.narrative,
+.narrative * {
+  cursor: none !important;
+}
+
+.narrative__link,
+.narrative .btn {
+  cursor: none !important;
+}
 
 @media (max-width: 768px) {
   .custom-cursor { display: none; }
-  .narrative { cursor: auto; }
+  .narrative,
+  .narrative * {
+    cursor: auto !important;
+  }
 }
 
 /* --- RESET --- */
@@ -500,7 +511,7 @@ h1, h2, h3, h4, h5, h6 {
   position: relative;
   z-index: 4;
   background: #DCE6F0;
-  border-radius: 32px;
+  border-radius: 32px 32px 0 0;
   margin-top: -32px;
   padding: 7rem 0;
   box-shadow: 0 -8px 40px rgba(0,0,0,0.06);
