@@ -414,6 +414,7 @@ h1, h2, h3, h4, h5, h6 {
   z-index: 2;
   background: #ffffff;
   border-radius: 32px;
+  margin-top: -48px;
   overflow: visible;
   box-shadow: 0 -8px 40px rgba(0,0,0,0.08);
 }
@@ -436,7 +437,7 @@ h1, h2, h3, h4, h5, h6 {
   z-index: 3;
   background: #F7FBFA;
   border-radius: 32px;
-  margin-top: -32px;
+  margin-top: -48px;
   padding: 5rem 0 7rem;
 }
 
@@ -511,8 +512,8 @@ h1, h2, h3, h4, h5, h6 {
   position: relative;
   z-index: 4;
   background: #DCE6F0;
-  border-radius: 32px 32px 0 0;
-  margin-top: -32px;
+  border-radius: 32px;
+  margin-top: -48px;
   padding: 7rem 0;
   box-shadow: 0 -8px 40px rgba(0,0,0,0.06);
 }
@@ -522,7 +523,7 @@ h1, h2, h3, h4, h5, h6 {
   z-index: 5;
   background: #F0DCE6;
   border-radius: 32px;
-  margin-top: -32px;
+  margin-top: -48px;
   padding: 7rem 0;
   box-shadow: 0 -8px 40px rgba(0,0,0,0.06);
 }
@@ -532,7 +533,7 @@ h1, h2, h3, h4, h5, h6 {
   z-index: 6;
   background: #F0E8DC;
   border-radius: 32px;
-  margin-top: -32px;
+  margin-top: -48px;
   padding: 7rem 0;
   box-shadow: 0 -8px 40px rgba(0,0,0,0.06);
 }
@@ -542,7 +543,7 @@ h1, h2, h3, h4, h5, h6 {
   z-index: 9;
   background: #DCE6F0;
   border-radius: 32px;
-  margin-top: -32px;
+  margin-top: -48px;
   padding: 7rem 0 8rem;
   box-shadow: 0 -8px 40px rgba(0,0,0,0.06);
 }
@@ -555,7 +556,7 @@ h1, h2, h3, h4, h5, h6 {
 @media (max-width: 768px) {
   .gallery {
     padding: 3.5rem 0 4rem;
-    border-radius: 24px 24px 0 0;
+    border-radius: 24px;
   }
   .gallery__grid {
     grid-template-columns: repeat(2, 1fr);
@@ -594,8 +595,8 @@ h1, h2, h3, h4, h5, h6 {
   .difficulties,
   .testimonials,
   .footer {
-    border-radius: 24px 24px 0 0;
-    margin-top: -24px;
+    border-radius: 24px;
+    margin-top: -36px;
   }
 }
 
