@@ -215,16 +215,18 @@ function initGallery() {
 
   items.forEach(function(item, i) {
     gsap.fromTo(item,
-      { opacity: 0, y: 40, scale: 0.92 },
+      { opacity: 0, y: 50, scale: 0.88, rotateX: 8 },
       {
         opacity: 1,
         y: 0,
         scale: 1,
-        duration: 0.6,
+        rotateX: 0,
+        duration: 0.7,
         ease: 'power3.out',
+        delay: i * 0.08,
         scrollTrigger: {
-          trigger: item,
-          start: 'top 92%',
+          trigger: '.gallery__grid',
+          start: 'top 85%',
           toggleActions: 'play none none none',
         }
       }
