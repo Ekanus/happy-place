@@ -573,8 +573,6 @@ function initContactPageForm() {
    STACKED SECTIONS SCROLL ANIMATION
    ============================================= */
 function initStackedSections() {
-  if (window.innerWidth < 768) return;
-
   var heroCenter = document.querySelector('.hero-center');
   var narrative  = document.querySelector('.narrative');
   if (!heroCenter || !narrative) return;

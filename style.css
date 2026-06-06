@@ -2810,10 +2810,4 @@ main {
     -webkit-overflow-scrolling: touch;
     overflow-y: auto !important;
   }
-
-  .hero, .narrative, .gallery, .services,
-  .how-it-works, .difficulties, .testimonials, .footer {
-    transform: none !important;
-    will-change: auto;
-  }
 }
