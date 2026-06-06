@@ -4,11 +4,6 @@
 
 gsap.registerPlugin(ScrollTrigger);
 
-// Fix iOS scroll issues
-if (/iPhone|iPad|iPod/.test(navigator.userAgent)) {
-  ScrollTrigger.normalizeScroll(true);
-}
-
 /* --- REVEAL UTILITY ---
    Uses fromTo so CSS opacity:0 (FOUC guard) doesn't
    interfere with the animation target value.
