@@ -2903,9 +2903,10 @@ main {
     box-sizing: border-box !important;
   }
   .service-detail__content {
-    width: 100% !important;
-    max-width: 100% !important;
+    width: calc(100vw - 3rem) !important;
+    max-width: calc(100vw - 3rem) !important;
     min-width: 0 !important;
+    box-sizing: border-box !important;
   }
   .service-detail__body {
     width: 100% !important;
