@@ -40,6 +40,15 @@
     <img src="./happy_place.jpg" alt="" class="page-loader__logo" />
   </div>
 
+  <script>
+    // Fallback: force-hide loader after 5 seconds
+    // even if GSAP fails to load
+    setTimeout(function() {
+      var loader = document.getElementById('page-loader');
+      if (loader) loader.style.display = 'none';
+    }, 5000);
+  </script>
+
   <div class="scroll-progress" id="scroll-progress" aria-hidden="true"></div>
 
 
