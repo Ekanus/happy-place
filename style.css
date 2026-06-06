@@ -540,7 +540,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .testimonials {
   position: relative;
-  z-index: 9;
+  z-index: 7;
   background: #DCE6F0;
   border-radius: 32px 32px 0 0;
   margin-top: -48px;
