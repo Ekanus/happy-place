@@ -24,25 +24,6 @@
   --ease-out:    cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-/* Pencil/sketch text effect */
-.nav__logo-text,
-.nav__link,
-.nav__cta {
-  filter: url(#pencil-text);
-}
-
-.hero-headline,
-.narrative__headline,
-.section-headline,
-.footer__headline {
-  filter: url(#pencil-text-strong);
-}
-
-.hero-sub,
-.btn,
-.section-eyebrow {
-  filter: url(#pencil-text);
-}
 
 /* Disable on mobile for performance */
 @media (max-width: 768px) {
