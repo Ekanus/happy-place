@@ -13,9 +13,9 @@
   --c-muted:         #718096;
   --c-line:          rgba(45,55,72,0.08);
 
-  --ff-heading:     'Baloo 2', cursive;
-  --ff-body:        'Baloo 2', cursive;
-  --ff-handwritten: 'Baloo 2', cursive;
+  --ff-heading:     'Nunito', sans-serif;
+  --ff-body:        'Inter', sans-serif;
+  --ff-handwritten: 'Nunito', sans-serif;
 
   --nav-h:       72px;
   --banner-h:    0px;
