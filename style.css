@@ -2787,3 +2787,27 @@ main {
     border-radius: 24px;
   }
 }
+
+@media (max-width: 768px) {
+  .nav__logo-text,
+  .nav__link,
+  .nav__cta,
+  .hero-headline,
+  .hero-sub,
+  .btn,
+  .narrative__headline,
+  .narrative__body,
+  .narrative__eyebrow,
+  .narrative__link,
+  .section-headline,
+  .section-eyebrow,
+  .section-intro,
+  .footer__headline,
+  .footer__cta,
+  .footer__link,
+  .service-card,
+  .step-item,
+  .testimonial-card {
+    filter: none !important;
+  }
+}
