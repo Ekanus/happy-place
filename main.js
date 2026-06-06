@@ -572,34 +572,36 @@ function initStackedSections() {
   var narrative = document.querySelector('.narrative');
   if (!heroCenter || !narrative) return;
 
-  // Hero shrinks as you scroll past
+  var isMobile = window.innerWidth < 768;
+
+  // Hero shrinks and fades as narrative approaches
   gsap.to('.hero-center', {
-    scale: 0.92,
-    opacity: 0.3,
+    scale: isMobile ? 0.85 : 0.92,
+    opacity: isMobile ? 0 : 0.3,
     ease: 'none',
     scrollTrigger: {
       trigger: '.narrative',
-      start: 'top 95%',
-      end: 'top 30%',
+      start: isMobile ? 'top 100%' : 'top 95%',
+      end: isMobile ? 'top 50%' : 'top 30%',
       scrub: true,
     }
   });
 
-  // Each section slides up smoothly
+  // Each section slides up — more movement on mobile
   var sections = document.querySelectorAll(
     '.narrative, .gallery, .services, .how-it-works, .difficulties, .testimonials, .footer'
   );
   sections.forEach(function(section) {
     if (!section) return;
     gsap.fromTo(section,
-      { yPercent: window.innerWidth < 768 ? 8 : 15 },
+      { yPercent: isMobile ? 20 : 15 },
       {
         yPercent: 0,
         ease: 'none',
         scrollTrigger: {
           trigger: section,
           start: 'top bottom',
-          end: 'top top',
+          end: isMobile ? 'top 20%' : 'top top',
           scrub: true,
         }
       }
