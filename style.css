@@ -115,7 +115,8 @@ button { font: inherit; cursor: pointer; border: none; background: none; }
   .container { padding: 0 2rem; }
 }
 @media (max-width: 768px) {
-  html, body { overflow-x: hidden; }
+  html { overflow-x: clip; }
+  body { overflow-x: hidden; }
   .container {
     padding: 0 1rem;
     overflow-x: hidden;
