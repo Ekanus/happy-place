@@ -583,7 +583,7 @@ function initStackedSections() {
       trigger: '.narrative',
       start: isMobile ? 'top 100%' : 'top 95%',
       end: isMobile ? 'top 50%' : 'top 30%',
-      scrub: true,
+      scrub: 0.5,
     }
   });
 
@@ -594,7 +594,7 @@ function initStackedSections() {
   sections.forEach(function(section) {
     if (!section) return;
     gsap.fromTo(section,
-      { yPercent: isMobile ? 20 : 15 },
+      { yPercent: 15 },
       {
         yPercent: 0,
         ease: 'none',
@@ -602,7 +602,7 @@ function initStackedSections() {
           trigger: section,
           start: 'top bottom',
           end: isMobile ? 'top 20%' : 'top top',
-          scrub: true,
+          scrub: 0.5,
         }
       }
     );

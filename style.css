@@ -579,7 +579,7 @@ h1, h2, h3, h4, h5, h6 {
   .how-it-works,
   .difficulties {
     border-radius: 32px;
-    margin-top: -40px;
+    margin-top: -48px;
     position: relative;
     overflow: visible;
   }
@@ -587,7 +587,7 @@ h1, h2, h3, h4, h5, h6 {
   /* Testimonials: flat bottom so footer can overlap on top */
   .testimonials {
     border-radius: 32px 32px 0 0;
-    margin-top: -40px;
+    margin-top: -48px;
     position: relative;
   }
 
