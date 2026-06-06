@@ -56,7 +56,7 @@
   .section-headline,
   .section-eyebrow,
   .footer__headline {
-    filter: none;
+    filter: none !important;
   }
 }
 
@@ -2809,5 +2809,17 @@ main {
   .step-item,
   .testimonial-card {
     filter: none !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .desktop-only {
+    display: none !important;
+  }
+
+  /* Remove ALL SVG filter references on mobile */
+  * {
+    filter: none !important;
+    -webkit-filter: none !important;
   }
 }

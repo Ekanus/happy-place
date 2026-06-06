@@ -14,10 +14,16 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&family=Nunito:wght@400;600;700;800;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
+  <style>
+    @media (max-width: 768px) {
+      * { filter: none !important; -webkit-filter: none !important; }
+      .svg-filters { display: none !important; }
+    }
+  </style>
 </head>
 <body>
 
-<svg class="svg-filters" aria-hidden="true" style="position:absolute;width:0;height:0;overflow:hidden;">
+<svg class="svg-filters desktop-only" aria-hidden="true" style="position:absolute;width:0;height:0;overflow:hidden;">
   <defs>
     <filter id="pencil-text" x="-5%" y="-5%" width="110%" height="110%">
       <feTurbulence type="turbulence" baseFrequency="0.02" numOctaves="4" seed="1" result="noise"/>
