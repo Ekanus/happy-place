@@ -577,21 +577,21 @@ h1, h2, h3, h4, h5, h6 {
   .services,
   .how-it-works,
   .difficulties {
-    border-radius: 24px;
-    margin-top: -24px;
+    border-radius: 32px;
+    margin-top: -40px;
     position: relative;
-    overflow: hidden;
+    overflow: visible;
   }
 
   /* Testimonials: flat bottom so footer can overlap on top */
   .testimonials {
-    border-radius: 24px 24px 0 0;
-    margin-top: -24px;
+    border-radius: 32px 32px 0 0;
+    margin-top: -40px;
     position: relative;
   }
 
   .footer {
-    border-radius: 24px 24px 0 0;
+    border-radius: 32px 32px 0 0;
     margin-top: -48px;
   }
 }
