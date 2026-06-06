@@ -544,7 +544,7 @@ h1, h2, h3, h4, h5, h6 {
   background: #DCE6F0;
   border-radius: 32px 32px 0 0;
   margin-top: -48px;
-  padding: 7rem 0 8rem;
+  padding: 7rem 0 10rem;
   box-shadow: 0 -8px 40px rgba(0,0,0,0.06);
 }
 
@@ -599,10 +599,11 @@ h1, h2, h3, h4, h5, h6 {
   .testimonials {
     border-radius: 24px 24px 0 0;
     margin-top: -36px;
+    padding: 4rem 0 7rem;
   }
   .footer {
     border-radius: 32px 32px 0 0;
-    margin-top: 0;
+    margin-top: -36px;
   }
 }
 
@@ -663,7 +664,7 @@ h1, h2, h3, h4, h5, h6 {
   z-index: 8;
   background: #90C4AE;
   border-radius: 32px 32px 0 0;
-  margin-top: 0;
+  margin-top: -48px;
   box-shadow: 0 -12px 48px rgba(0,0,0,0.06);
   padding: 5rem 0 2.5rem;
   overflow: visible;
