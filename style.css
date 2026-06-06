@@ -942,8 +942,7 @@ h1, h2, h3, h4, h5, h6 {
 .hero {
   height: 100svh;
   background: #90C4AE;
-  position: sticky;
-  top: 0;
+  position: relative;
   z-index: 0;
   border-radius: 0;
   box-shadow: none;
@@ -1112,8 +1111,7 @@ main {
   .hero {
     height: 100svh;
     padding: 4.5rem 1.25rem 2rem;
-    position: sticky;
-    top: 0;
+    position: relative;
     z-index: 1;
   }
   .hero-center {
