@@ -2704,29 +2704,34 @@ main {
 
 @media (max-width: 768px) {
   .service-detail {
-    padding: 2rem 1rem;
-    overflow: hidden;
+    padding: 2rem 0.5rem;
+  }
+  .service-detail__inner {
+    gap: 1.5rem;
   }
   .service-detail__content {
     max-width: 100%;
-    overflow: hidden;
+    word-break: break-word;
+    overflow-wrap: break-word;
   }
   .service-detail__title {
-    font-size: clamp(1.2rem, 4.5vw, 1.6rem) !important;
-    word-wrap: break-word;
+    font-size: clamp(1.1rem, 4.5vw, 1.5rem) !important;
+    word-break: break-word;
     overflow-wrap: break-word;
     hyphens: auto;
+    line-height: 1.3;
   }
-  .service-detail__desc {
+  .service-detail__body {
     font-size: 0.88rem;
-    max-width: 100%;
+    word-break: break-word;
+    overflow-wrap: break-word;
   }
   .service-detail__image {
-    min-height: 160px;
-    max-height: 200px;
+    min-height: 140px;
+    max-height: 180px;
   }
-  .service-detail__list li {
-    font-size: 0.88rem;
+  .service-detail__list-item {
+    font-size: 0.85rem;
   }
 }
 
