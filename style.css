@@ -2888,3 +2888,30 @@ main {
     word-wrap: break-word;
   }
 }
+
+@media (max-width: 768px) {
+  .service-detail {
+    padding: 2rem 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+  .service-detail .container {
+    padding: 0 1.25rem !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+  .service-detail__content {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+  }
+  .service-detail__body {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+  }
+  .service-detail__inner {
+    min-width: 0 !important;
+  }
+}
