@@ -13,8 +13,8 @@
   --c-muted:         #718096;
   --c-line:          rgba(45,55,72,0.08);
 
-  --ff-heading:     'Baloo 2', cursive;
-  --ff-body:        'Baloo 2', cursive;
+  --ff-heading:     'Nunito', sans-serif;
+  --ff-body:        'Nunito', sans-serif;
   --ff-handwritten: 'Nunito', sans-serif;
 
   --nav-h:       72px;
@@ -90,7 +90,7 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; }
 body {
-  font-family: var(--ff-handwritten);
+  font-family: var(--ff-heading);
   font-size: 1rem;
   line-height: 1.75;
   color: var(--c-text);
@@ -182,7 +182,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .nav__link {
-  font-family: var(--ff-handwritten);
+  font-family: var(--ff-heading);
   font-size: 0.92rem;
   font-weight: 500;
   color: #2D3748;
@@ -206,7 +206,7 @@ h1, h2, h3, h4, h5, h6 {
   display: flex;
   align-items: baseline;
   gap: 0.2rem;
-  font-family: var(--ff-handwritten);
+  font-family: var(--ff-heading);
   font-weight: 800;
   font-size: 1.4rem;
   white-space: nowrap;
@@ -242,7 +242,7 @@ h1, h2, h3, h4, h5, h6 {
 .nav__cta {
   background: transparent;
   color: #2D3748;
-  font-family: var(--ff-handwritten);
+  font-family: var(--ff-heading);
   font-size: 0.92rem;
   font-weight: 700;
   text-decoration: none;
@@ -333,7 +333,7 @@ h1, h2, h3, h4, h5, h6 {
   gap: 2rem;
 }
 .nav__overlay-link {
-  font-family: var(--ff-handwritten);
+  font-family: var(--ff-heading);
   font-size: clamp(1.75rem, 7vw, 2.5rem);
   font-weight: 800;
   color: var(--c-text);
@@ -341,7 +341,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 .nav__overlay-link:hover { color: var(--c-primary); }
 .nav__overlay-cta {
-  font-family: var(--ff-handwritten);
+  font-family: var(--ff-heading);
   padding: 0.85rem 2.5rem;
   font-size: 1rem;
 }
@@ -1038,7 +1038,7 @@ main {
   text-align: center;
 }
 .hero-headline {
-  font-family: var(--ff-handwritten);
+  font-family: var(--ff-heading);
   font-size: clamp(2.2rem, 5vw, 3.8rem);
   letter-spacing: 0.01em;
   font-weight: 800;
@@ -2802,5 +2802,18 @@ main {
   * {
     filter: none !important;
     -webkit-filter: none !important;
+  }
+}
+
+@media (max-width: 768px) {
+  html, body {
+    -webkit-overflow-scrolling: touch;
+    overflow-y: auto !important;
+  }
+
+  .hero, .narrative, .gallery, .services,
+  .how-it-works, .difficulties, .testimonials, .footer {
+    transform: none !important;
+    will-change: auto;
   }
 }

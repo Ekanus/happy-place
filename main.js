@@ -4,6 +4,11 @@
 
 gsap.registerPlugin(ScrollTrigger);
 
+// Fix iOS scroll issues
+if (/iPhone|iPad|iPod/.test(navigator.userAgent)) {
+  ScrollTrigger.normalizeScroll(true);
+}
+
 /* --- REVEAL UTILITY ---
    Uses fromTo so CSS opacity:0 (FOUC guard) doesn't
    interfere with the animation target value.
@@ -568,6 +573,8 @@ function initContactPageForm() {
    STACKED SECTIONS SCROLL ANIMATION
    ============================================= */
 function initStackedSections() {
+  if (window.innerWidth < 768) return;
+
   var heroCenter = document.querySelector('.hero-center');
   var narrative  = document.querySelector('.narrative');
   if (!heroCenter || !narrative) return;
