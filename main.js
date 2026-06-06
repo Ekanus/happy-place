@@ -572,22 +572,18 @@ function initStackedSections() {
   var narrative = document.querySelector('.narrative');
   if (!heroCenter || !narrative) return;
 
-  var isMobile = window.innerWidth < 768;
-
-  // Hero shrinks and fades as narrative approaches
   gsap.to('.hero-center', {
-    scale: isMobile ? 0.85 : 0.92,
-    opacity: isMobile ? 0 : 0.3,
+    scale: 0.92,
+    opacity: 0,
     ease: 'none',
     scrollTrigger: {
       trigger: '.narrative',
-      start: isMobile ? 'top 100%' : 'top 95%',
-      end: isMobile ? 'top 50%' : 'top 30%',
+      start: 'top 100%',
+      end: 'top 40%',
       scrub: 0.5,
     }
   });
 
-  // Each section slides up — more movement on mobile
   var sections = document.querySelectorAll(
     '.narrative, .gallery, .services, .how-it-works, .difficulties, .testimonials, .footer'
   );
@@ -601,7 +597,7 @@ function initStackedSections() {
         scrollTrigger: {
           trigger: section,
           start: 'top bottom',
-          end: isMobile ? 'top 20%' : 'top top',
+          end: 'top top',
           scrub: 0.5,
         }
       }
