@@ -537,7 +537,6 @@ h1, h2, h3, h4, h5, h6 {
 @media (max-width: 768px) {
   .gallery {
     padding: 3.5rem 0 4rem;
-    border-radius: 24px;
   }
   .gallery__grid {
     grid-template-columns: repeat(2, 1fr);
@@ -573,18 +572,15 @@ h1, h2, h3, h4, h5, h6 {
   .gallery,
   .services,
   .how-it-works,
-  .difficulties {
-    border-radius: 24px;
-    margin-top: -36px;
-  }
+  .difficulties,
   .testimonials {
     border-radius: 24px 24px 0 0;
-    margin-top: -36px;
-    padding: 4rem 0 7rem;
+    margin-top: -24px;
+    position: relative;
   }
   .footer {
-    border-radius: 32px 32px 0 0;
-    margin-top: -36px;
+    border-radius: 24px 24px 0 0;
+    margin-top: -48px;
   }
 }
 
@@ -2688,6 +2684,19 @@ main {
   .services-cta-banner,
   .contact-page-section,
   .faq-section { border-radius: 24px; }
+}
+
+@media (max-width: 768px) {
+  .service-detail__title {
+    font-size: clamp(1.3rem, 5vw, 1.8rem);
+    word-break: break-word;
+  }
+  .service-detail__desc {
+    font-size: 0.9rem;
+  }
+  .service-detail__image {
+    min-height: 180px;
+  }
 }
 
 /* =============================================

@@ -574,27 +574,30 @@ function initContactPageForm() {
    ============================================= */
 function initStackedSections() {
   var heroCenter = document.querySelector('.hero-center');
-  var narrative  = document.querySelector('.narrative');
+  var narrative = document.querySelector('.narrative');
   if (!heroCenter || !narrative) return;
 
+  // Hero shrinks as you scroll past
   gsap.to('.hero-center', {
-    scale: 0.8,
-    opacity: 0,
+    scale: 0.92,
+    opacity: 0.3,
     ease: 'none',
     scrollTrigger: {
       trigger: '.narrative',
-      start: 'top 80%',
-      end: 'top 20%',
+      start: 'top 95%',
+      end: 'top 30%',
       scrub: true,
     }
   });
 
+  // Each section slides up smoothly
   var sections = document.querySelectorAll(
-    '.narrative, .stats, .services, .how-it-works, .difficulties, .testimonials, .footer'
+    '.narrative, .gallery, .services, .how-it-works, .difficulties, .testimonials, .footer'
   );
   sections.forEach(function(section) {
+    if (!section) return;
     gsap.fromTo(section,
-      { yPercent: 15 },
+      { yPercent: window.innerWidth < 768 ? 8 : 15 },
       {
         yPercent: 0,
         ease: 'none',
