@@ -120,7 +120,7 @@ button { font: inherit; cursor: pointer; border: none; background: none; }
   .container {
     padding: 0 1rem;
     overflow-x: hidden;
-    max-width: 100vw;
+    max-width: 100%;
   }
 }
 
