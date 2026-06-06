@@ -534,23 +534,6 @@ h1, h2, h3, h4, h5, h6 {
   box-shadow: 0 -8px 40px rgba(0,0,0,0.06);
 }
 
-.gallery::before,
-.services::before,
-.how-it-works::before,
-.difficulties::before,
-.testimonials::before,
-.footer::before {
-  content: '';
-  position: absolute;
-  top: -60px;
-  left: 0;
-  right: 0;
-  height: 60px;
-  background: inherit;
-  z-index: 0;
-  border-radius: 0;
-}
-
 /* Mobile grid fixes */
 @media (min-width: 769px) and (max-width: 1024px) {
   .services__grid { grid-template-columns: repeat(2, 1fr); }
