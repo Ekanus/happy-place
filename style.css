@@ -2896,9 +2896,10 @@ main {
     max-width: 100% !important;
   }
   .service-detail .container {
-    padding: 0 1.25rem !important;
-    width: 100% !important;
-    max-width: 100% !important;
+    width: calc(100vw - 2rem) !important;
+    max-width: calc(100vw - 2rem) !important;
+    margin: 0 auto !important;
+    padding: 0 1rem !important;
     box-sizing: border-box !important;
   }
   .service-detail__content {
